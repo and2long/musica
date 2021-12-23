@@ -1,0 +1,16 @@
+* {
+    background-color: #252525
+}
+#leftMenu {
+    background-color: #000000
+}
+#bcb {
+    background-color: #2a2a2a
+}
+#header {
+    font-size: 24px;
+}
+#menu1 {
+    color: #c2473a;
+    background: #1b1b1b;
+}

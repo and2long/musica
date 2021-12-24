@@ -46,7 +46,7 @@ class MainWindow(QWidget):
 
         leftMenu.addStretch(1)
 
-        label2 = QLabel("内容区")
+        label = QLabel("内容")
 
         label3 = QLabel("底部栏")
         label3.setFixedHeight(45)
@@ -57,7 +57,7 @@ class MainWindow(QWidget):
         pb.setTextVisible(False)
 
         container.addLayout(leftMenu, 1)
-        container.addWidget(label2, 4)
+        container.addWidget(label, 4)
         bottomControlBar.addWidget(label3)
 
         root.addLayout(container)

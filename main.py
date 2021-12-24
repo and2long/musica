@@ -1,9 +1,9 @@
 import sys
 
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QBoxLayout, QLabel, QProgressBar, QWidget
+from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
 
-from tools import QSSTool
+from components.topbar import TopBar
 
 
 class MainWindow(QWidget):
@@ -11,65 +11,48 @@ class MainWindow(QWidget):
         super().__init__()
         self.setWindowTitle("MUSICA")
         self.setFixedSize(1000, 670)
+        self.setStyleSheet("background-color: #252525")
+        self.setup_ui()
 
-        root = QBoxLayout(QBoxLayout.TopToBottom)
-        root.setContentsMargins(0, 0, 0, 0)
-        container = QBoxLayout(QBoxLayout.LeftToRight)
-        bottomControlBar = QBoxLayout(QBoxLayout.LeftToRight)
+    def setup_ui(self):
+        Leftmenus = QLabel(self)
+        Leftmenus.setFixedSize(200, 670)
+        Leftmenus.setStyleSheet("background-color: #202020")
 
-        leftMenu = QBoxLayout(QBoxLayout.TopToBottom)
-        leftMenu.setObjectName("leftMenu")
-
-        header = QLabel("MUSICA")
-        header.setFixedHeight(150)
+        header = QLabel("MUSICA", self)
+        header.setFixedSize(200, 150)
         header.setAlignment(Qt.AlignCenter)
-        header.setObjectName("header")
-        leftMenu.addWidget(header)
+        header.setStyleSheet("font-size: 24px; background-color: #202020")
 
-        menu1 = QLabel("发现音乐")
-        menu1.setFixedHeight(40)
-        menu1.setAlignment(Qt.AlignCenter)
-        menu1.setObjectName("menu1")
-        leftMenu.addWidget(menu1)
+        titles = ["发现音乐", "我的收藏", "下载管理"]
+        for i in range(3):
+            item = QLabel(titles[i], self)
+            item.setFixedSize(200, 40)
+            item.setAlignment(Qt.AlignCenter)
+            item.move(0, 150 + i * 40)
+            if i == 0:
+                item.setStyleSheet("background-color: #1b1b1b; color: #c2473a;")
+            else:
+                item.setStyleSheet("background-color: #202020")
 
-        menu2 = QLabel("我的收藏")
-        menu2.setFixedHeight(40)
-        menu2.setAlignment(Qt.AlignCenter)
-        menu2.setObjectName("menu2")
-        leftMenu.addWidget(menu2)
+        label3 = QLabel("底部栏", self)
+        label3.setFixedSize(1000, 45)
+        label3.setStyleSheet("background-color: #2a2a2a")
+        label3.move(0, 670 - 45)
 
-        menu3 = QLabel("下载管理")
-        menu3.setFixedHeight(40)
-        menu3.setAlignment(Qt.AlignCenter)
-        menu3.setObjectName("menu3")
-        leftMenu.addWidget(menu3)
-
-        leftMenu.addStretch(1)
-
-        label = QLabel("内容")
-
-        label3 = QLabel("底部栏")
-        label3.setFixedHeight(45)
-        label3.setObjectName("bcb")
-
-        pb = QProgressBar()
+        pb = QProgressBar(self)
         pb.setValue(30)
+        pb.setFixedWidth(1000)
         pb.setTextVisible(False)
+        pb.move(0, 670 - 45 - 10)
 
-        container.addLayout(leftMenu, 1)
-        container.addWidget(label, 4)
-        bottomControlBar.addWidget(label3)
-
-        root.addLayout(container)
-        root.addWidget(pb)
-        root.addLayout(bottomControlBar)
-
-        self.setLayout(root)
+        topbar = TopBar()
+        topbar.setParent(self)
+        topbar.move(200, 0)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = MainWindow()
     w.show()
-    QSSTool.setQssToObj("main.qss", app)
     sys.exit(app.exec())

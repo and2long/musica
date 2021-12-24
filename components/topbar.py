@@ -1,15 +1,15 @@
 import sys
-from types import LambdaType
 
-from PySide6.QtCore import QSize, Qt
-from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QStackedLayout, QWidget
+from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QWidget
 
 
 class TopBar(QWidget):
     def __init__(self):
         super().__init__()
         self.setFixedSize(800, 50)
-        self.setStyleSheet("background-color: #2a2a2a")
+        bg = QLabel(self)
+        bg.setFixedSize(800, 50)
+        bg.setStyleSheet("background-color :#2a2a2a")
         self.setup_ui()
 
     def setup_ui(self):

@@ -1,3 +1,4 @@
 {
-    "json.format.enable": true
+    "json.format.enable": true,
+    "jupyter.jupyterServerType": "local"
 }

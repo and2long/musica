@@ -6,11 +6,14 @@ from tools import MusicSourceTool
 
 
 class TopBar(QWidget):
+    mWidth = 800
+    mHeight = 50
+
     def __init__(self):
         super().__init__()
-        self.setFixedSize(800, 50)
+        self.setFixedSize(self.mWidth, self.mHeight)
         bg = QLabel(self)
-        bg.setFixedSize(800, 50)
+        bg.setFixedSize(self.mWidth, self.mHeight)
         bg.setStyleSheet("background-color :#2a2a2a")
         self.setup_ui()
 

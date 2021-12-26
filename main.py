@@ -3,7 +3,7 @@ import sys
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
 
-from components.topbar import TopBar
+from topbar import TopBar
 
 
 class MainWindow(QWidget):

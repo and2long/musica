@@ -1,0 +1,1214 @@
+{
+    "result": {
+        "songs": [
+            {
+                "id": 298317,
+                "name": "屋顶",
+                "artists": [
+                    {
+                        "id": 9612,
+                        "name": "温岚",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 29597,
+                    "name": "有点野",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 994608000000,
+                    "size": 11,
+                    "copyrightId": 1416500,
+                    "status": 40,
+                    "picId": 74766790689775,
+                    "mark": 0
+                },
+                "duration": 319039,
+                "copyrightId": 1416500,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 8192
+            },
+            {
+                "id": 210049,
+                "name": "布拉格广场",
+                "artists": [
+                    {
+                        "id": 7219,
+                        "name": "蔡依林",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 21349,
+                    "name": "看我72变",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1046966400007,
+                    "size": 11,
+                    "copyrightId": 5003,
+                    "status": 1,
+                    "transNames": [
+                        "Magic"
+                    ],
+                    "picId": 109951165744896786,
+                    "alia": [
+                        "Magic"
+                    ],
+                    "mark": 0
+                },
+                "duration": 294000,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 186025,
+                "fee": 1,
+                "rUrl": null,
+                "mark": 8192
+            },
+            {
+                "id": 536570450,
+                "name": "魔术与歌曲：告白气球",
+                "artists": [
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 13228454,
+                        "name": "蔡威泽",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 37579061,
+                    "name": "2018年中央电视台春节联欢晚会",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1518652800000,
+                    "size": 41,
+                    "copyrightId": 677016,
+                    "status": 0,
+                    "picId": 109951163142162226,
+                    "mark": 0
+                },
+                "duration": 214203,
+                "copyrightId": 677016,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 0,
+                "rUrl": null,
+                "mark": 8
+            },
+            {
+                "id": 255020,
+                "name": "刀马旦",
+                "artists": [
+                    {
+                        "id": 8331,
+                        "name": "李玟",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 25475,
+                    "name": "Promise",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1002902400000,
+                    "size": 13,
+                    "copyrightId": 7001,
+                    "status": 1,
+                    "picId": 109951165959446596,
+                    "mark": 0
+                },
+                "duration": 192866,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 5287134,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 8192
+            },
+            {
+                "id": 29393641,
+                "name": "布拉格广场",
+                "artists": [
+                    {
+                        "id": 7219,
+                        "name": "蔡依林",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 3017298,
+                    "name": "巨星金曲-合唱篇",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1408982400007,
+                    "size": 22,
+                    "copyrightId": 7001,
+                    "status": 0,
+                    "picId": 2538772348541160,
+                    "mark": 0
+                },
+                "duration": 293851,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 0
+            },
+            {
+                "id": 5257138,
+                "name": "屋顶",
+                "artists": [
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 9612,
+                        "name": "温岚",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 512175,
+                    "name": "男女情歌对唱冠军全记录",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1170604800007,
+                    "size": 26,
+                    "copyrightId": 7001,
+                    "status": 3,
+                    "picId": 109951165671182684,
+                    "mark": 0
+                },
+                "duration": 321253,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 270336
+            },
+            {
+                "id": 209756,
+                "name": "布拉格广场",
+                "artists": [
+                    {
+                        "id": 7219,
+                        "name": "蔡依林",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 21330,
+                    "name": "J-Top冠军精选",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1146758400007,
+                    "size": 23,
+                    "copyrightId": 5003,
+                    "status": 1,
+                    "picId": 109951165705498890,
+                    "mark": 0
+                },
+                "duration": 292520,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 186025,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 0
+            },
+            {
+                "id": 209760,
+                "name": "骑士精神",
+                "artists": [
+                    {
+                        "id": 7219,
+                        "name": "蔡依林",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 21330,
+                    "name": "J-Top冠军精选",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1146758400007,
+                    "size": 23,
+                    "copyrightId": 5003,
+                    "status": 1,
+                    "picId": 109951165705498890,
+                    "mark": 0
+                },
+                "duration": 258120,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 186031,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 0
+            },
+            {
+                "id": 298101,
+                "name": "祝我生日快乐 (Live)",
+                "artists": [
+                    {
+                        "id": 9612,
+                        "name": "温岚",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 29585,
+                    "name": "爱回温 新歌+精选",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1117555200000,
+                    "size": 24,
+                    "copyrightId": 1416500,
+                    "status": 40,
+                    "picId": 109951165774753337,
+                    "alia": [
+                        "Love Comes Back"
+                    ],
+                    "mark": 0
+                },
+                "duration": 258000,
+                "copyrightId": 1416500,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 8192
+            },
+            {
+                "id": 254832,
+                "name": "刀马旦",
+                "artists": [
+                    {
+                        "id": 8331,
+                        "name": "李玟",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 25460,
+                    "name": "1994-2008年 豪华典藏精选",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1210867200000,
+                    "size": 30,
+                    "copyrightId": 7001,
+                    "status": 1,
+                    "picId": 109951165630456010,
+                    "mark": 0
+                },
+                "duration": 192075,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 0
+            },
+            {
+                "id": 561999164,
+                "name": "周杰伦",
+                "artists": [
+                    {
+                        "id": 0,
+                        "name": "山弟",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 38783457,
+                    "name": "周杰伦",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1526313600000,
+                    "size": 1,
+                    "copyrightId": 516010,
+                    "status": 0,
+                    "picId": 109951163300233792,
+                    "mark": 0
+                },
+                "duration": 268905,
+                "copyrightId": 516010,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 0,
+                "rUrl": null,
+                "mark": 0
+            },
+            {
+                "id": 288371,
+                "name": "黄浦江深",
+                "artists": [
+                    {
+                        "id": 9278,
+                        "name": "宋祖英",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 28609,
+                    "name": "台北小巨蛋音乐会",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1316880000007,
+                    "size": 14,
+                    "copyrightId": 0,
+                    "status": 1,
+                    "picId": 112150186051141,
+                    "mark": 0
+                },
+                "duration": 242000,
+                "copyrightId": 0,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 0,
+                "rUrl": null,
+                "mark": 0
+            },
+            {
+                "id": 210062,
+                "name": "骑士精神",
+                "artists": [
+                    {
+                        "id": 7219,
+                        "name": "蔡依林",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 21349,
+                    "name": "看我72变",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1046966400007,
+                    "size": 11,
+                    "copyrightId": 5003,
+                    "status": 1,
+                    "transNames": [
+                        "Magic"
+                    ],
+                    "picId": 109951165744896786,
+                    "alia": [
+                        "Magic"
+                    ],
+                    "mark": 0
+                },
+                "duration": 257000,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 186031,
+                "fee": 1,
+                "rUrl": null,
+                "mark": 8192
+            },
+            {
+                "id": 288820,
+                "name": "结尾曲-友谊地久天长(Live)",
+                "artists": [
+                    {
+                        "id": 9278,
+                        "name": "宋祖英",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 3707,
+                        "name": "郎朗",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 189020,
+                        "name": "多明戈",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 28650,
+                    "name": "中国北京鸟巢夏季音乐会",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1248710400000,
+                    "size": 23,
+                    "copyrightId": 0,
+                    "status": 1,
+                    "picId": 871912720826764,
+                    "mark": 0
+                },
+                "duration": 416000,
+                "copyrightId": 0,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 0,
+                "rUrl": null,
+                "mark": 0
+            },
+            {
+                "id": 254942,
+                "name": "刀马旦",
+                "artists": [
+                    {
+                        "id": 8331,
+                        "name": "李玟",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 25471,
+                    "name": "爱琴海(新歌+电音精选)",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1024329600000,
+                    "size": 21,
+                    "copyrightId": 7001,
+                    "status": 3,
+                    "picId": 109951165630897213,
+                    "mark": 0
+                },
+                "duration": 214826,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 0
+            },
+            {
+                "id": 5268828,
+                "name": "刀马旦",
+                "artists": [
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 8331,
+                        "name": "李玟",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 512879,
+                    "name": "2002 国语冠军金选 24首",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1044288000000,
+                    "size": 24,
+                    "copyrightId": 5003,
+                    "status": 1,
+                    "picId": 75866302334161,
+                    "mark": 0
+                },
+                "duration": 192862,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 0
+            },
+            {
+                "id": 5257160,
+                "name": "刀马旦",
+                "artists": [
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 8331,
+                        "name": "李玟",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 512175,
+                    "name": "男女情歌对唱冠军全记录",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1170604800007,
+                    "size": 26,
+                    "copyrightId": 7001,
+                    "status": 3,
+                    "picId": 109951165671182684,
+                    "mark": 0
+                },
+                "duration": 193253,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 8,
+                "rUrl": null,
+                "mark": 270336
+            },
+            {
+                "id": 400162858,
+                "name": "布拉格广场",
+                "artists": [
+                    {
+                        "id": 7219,
+                        "name": "蔡依林",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 34429108,
+                    "name": "J女神 影音典藏精选",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1346947200000,
+                    "size": 30,
+                    "copyrightId": 7001,
+                    "status": 3,
+                    "picId": 109951165958812099,
+                    "mark": 0
+                },
+                "duration": 294600,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 1,
+                "rUrl": null,
+                "mark": 270336
+            },
+            {
+                "id": 209660,
+                "name": "布拉格广场",
+                "artists": [
+                    {
+                        "id": 7219,
+                        "name": "蔡依林",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 21326,
+                    "name": "绝版公主 梦绮地精选",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1190131200000,
+                    "size": 40,
+                    "copyrightId": 7001,
+                    "status": 3,
+                    "picId": 109951165958730017,
+                    "mark": 0
+                },
+                "duration": 291578,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 186025,
+                "fee": 1,
+                "rUrl": null,
+                "mark": 8192
+            },
+            {
+                "id": 400581225,
+                "name": "海盗",
+                "artists": [
+                    {
+                        "id": 7219,
+                        "name": "蔡依林",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    {
+                        "id": 6452,
+                        "name": "周杰伦",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    }
+                ],
+                "album": {
+                    "id": 34432052,
+                    "name": "星座圣典",
+                    "artist": {
+                        "id": 0,
+                        "name": "",
+                        "picUrl": null,
+                        "alias": [],
+                        "albumSize": 0,
+                        "picId": 0,
+                        "img1v1Url": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+                        "img1v1": 0,
+                        "trans": null
+                    },
+                    "publishTime": 1264348800000,
+                    "size": 23,
+                    "copyrightId": 7001,
+                    "status": 3,
+                    "picId": 109951165958770652,
+                    "mark": 0
+                },
+                "duration": 274677,
+                "copyrightId": 7001,
+                "status": 0,
+                "alias": [],
+                "rtype": 0,
+                "ftype": 0,
+                "mvid": 0,
+                "fee": 1,
+                "rUrl": null,
+                "mark": 8192
+            }
+        ],
+        "songCount": 300
+    },
+    "code": 200
+}

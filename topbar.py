@@ -2,6 +2,8 @@ import sys
 
 from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QWidget
 
+from tools import MusicSourceTool
+
 
 class TopBar(QWidget):
     def __init__(self):
@@ -20,6 +22,9 @@ class TopBar(QWidget):
             "background-color: #4a4a4a;  padding-left: 15px; padding-right: 15px; border-radius: 14px"
         )
         searchBar.move(150, 11)
+        searchBar.returnPressed.connect(
+            lambda: MusicSourceTool.searchByKeyword(searchBar.text())
+        )
 
         recommend = QLabel("推荐", parent=self)
         recommend.setStyleSheet("font-size: 14px")

@@ -7,3 +7,4 @@ Python 3.9.7
 - pyside6
 - black
 - requests
+- ipykernel

@@ -1,7 +1,7 @@
 import sys
 
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
+from PySide6.QtCore import Qt, Slot
+from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QPushButton, QWidget
 
 from data_list import DataList
 from topbar import TopBar
@@ -60,6 +60,8 @@ class MainWindow(QWidget):
 
         dataArea = DataList(self)
         dataArea.move(self.menuWidth, TopBar.mHeight)
+
+        topbar.search.connect(dataArea.onSearch)
 
 
 if __name__ == "__main__":

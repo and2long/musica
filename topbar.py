@@ -1,5 +1,6 @@
 import sys
 
+from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QWidget
 
 from tools import MusicSourceTool
@@ -8,6 +9,9 @@ from tools import MusicSourceTool
 class TopBar(QWidget):
     mWidth = 800
     mHeight = 50
+
+    # 定义一个信号
+    search = Signal(str)
 
     def __init__(self):
         super().__init__()
@@ -25,13 +29,13 @@ class TopBar(QWidget):
             "background-color: #4a4a4a;  padding-left: 15px; padding-right: 15px; border-radius: 14px"
         )
         searchBar.move(150, 11)
-        searchBar.returnPressed.connect(
-            lambda: MusicSourceTool.searchByKeyword(searchBar.text())
-        )
 
         recommend = QLabel("推荐", parent=self)
         recommend.setStyleSheet("font-size: 14px")
         recommend.move(50, 14)
+
+        # 输入框监听回车键
+        searchBar.returnPressed.connect(lambda: self.search.emit(searchBar.text()))
 
 
 if __name__ == "__main__":

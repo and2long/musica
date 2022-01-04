@@ -1,6 +1,6 @@
 import sys
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, Slot
 from PySide6.QtWidgets import QApplication, QHBoxLayout, QLabel, QVBoxLayout, QWidget
 
 stretchs = [1, 9, 5, 3]
@@ -69,6 +69,10 @@ class DataList(QWidget):
         for i in range(10):
             item = ItemSong(self, index=i, isColor=i % 2 == 0)
             item.move(0, DataHeader.mHeight + i * ItemSong.mHeight)
+
+    @Slot(str)
+    def onSearch(self, value):
+        print(value)
 
 
 if __name__ == "__main__":

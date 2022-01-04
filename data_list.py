@@ -1,7 +1,18 @@
 import sys
 
-from PySide6.QtCore import Qt, Slot
-from PySide6.QtWidgets import QApplication, QHBoxLayout, QLabel, QVBoxLayout, QWidget
+from PySide6.QtCore import QSize, Qt, Slot
+from PySide6.QtWidgets import (
+    QApplication,
+    QHBoxLayout,
+    QLabel,
+    QListWidget,
+    QListWidgetItem,
+    QVBoxLayout,
+    QWidget,
+)
+
+from models import Song
+from tools import MusicSourceTool, TimeTool
 
 stretchs = [1, 9, 5, 3]
 
@@ -9,17 +20,15 @@ stretchs = [1, 9, 5, 3]
 class ItemSong(QWidget):
     mHeight = 35
 
-    def __init__(self, parent=None, index=0, isColor=False) -> None:
+    def __init__(self, parent=None, index=0, song=None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(DataList.mWidth, self.mHeight)
-        if isColor:
-            self.setStyleSheet("background-color: #292929")
 
         hLayout = QHBoxLayout(self)
         hLayout.setContentsMargins(10, 0, 10, 0)
         hLayout.setSpacing(0)
 
-        titles = ["", "One Last Time", "Ariana Grande", "03:30"]
+        titles = ["", song.name, song.name, TimeTool.durationFormat(song.duration)]
         for i in range(len(titles)):
             item = QLabel("{:0>2d}".format(index + 1) if i == 0 else titles[i])
             if i == 0:
@@ -64,15 +73,23 @@ class DataList(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(self.mWidth, self.mHeight)
-
         DataHeader(self)
-        for i in range(10):
-            item = ItemSong(self, index=i, isColor=i % 2 == 0)
-            item.move(0, DataHeader.mHeight + i * ItemSong.mHeight)
+        self.listWidget = QListWidget(self)
+        self.listWidget.move(0, DataHeader.mHeight)
+        self.listWidget.setFixedSize(self.mWidth, self.mHeight - DataHeader.mHeight)
+
+    def setData(self, value: list):
+        for i in range(len(value)):
+            itemWidget = ItemSong(self, index=i, song=value[i])
+            item = QListWidgetItem()
+            item.setSizeHint(QSize(0, ItemSong.mHeight))
+            self.listWidget.addItem(item)
+            self.listWidget.setItemWidget(item, itemWidget)
 
     @Slot(str)
-    def onSearch(self, value):
-        print(value)
+    def onSearch(self, value: str):
+        result = MusicSourceTool.searchByKeyword(value)
+        self.setData(result)
 
 
 if __name__ == "__main__":

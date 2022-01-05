@@ -20,7 +20,7 @@ stretchs = [1, 9, 5, 3]
 class ItemSong(QWidget):
     mHeight = 35
 
-    def __init__(self, parent=None, index=0, song=None) -> None:
+    def __init__(self, parent=None, index=0, song: Song = None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(DataList.mWidth, self.mHeight)
 
@@ -28,7 +28,12 @@ class ItemSong(QWidget):
         hLayout.setContentsMargins(10, 0, 10, 0)
         hLayout.setSpacing(0)
 
-        titles = ["", song.name, song.name, TimeTool.durationFormat(song.duration)]
+        titles = [
+            "",
+            song.name,
+            "/".join([item["name"] for item in song.artists]),
+            TimeTool.durationFormat(song.duration),
+        ]
         for i in range(len(titles)):
             item = QLabel("{:0>2d}".format(index + 1) if i == 0 else titles[i])
             if i == 0:

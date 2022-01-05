@@ -3,8 +3,6 @@ import sys
 from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QWidget
 
-from tools import MusicSourceTool
-
 
 class TopBar(QWidget):
     mWidth = 800

@@ -9,6 +9,7 @@ class Song:
             self.id = data.get("id")
             self.name = data.get("name")
             self.duration = data.get("duration")
+            self.artists = data.get("artists")
         else:
             self.id = id
             self.name = name
@@ -20,6 +21,7 @@ class Song:
                 "id": self.id,
                 "name": self.name,
                 "duration": self.duration,
+                "artists": self.artists,
             },
             ensure_ascii=False,
         )

@@ -1,7 +1,7 @@
 import sys
 
-from PySide6.QtCore import Qt, Slot
-from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QPushButton, QWidget
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
 
 from data_list import DataList
 from topbar import TopBar

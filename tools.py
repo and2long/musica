@@ -35,6 +35,7 @@ class MusicSourceTool:
 class TimeTool:
     @staticmethod
     def durationFormat(d):
+        d = round(d / 1000)
         min = int(d / 60)
         sec = int(d % 60)
         return "{:0>2}:{:0>2}".format(min, sec)

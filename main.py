@@ -64,7 +64,6 @@ class MainWindow(QWidget):
         topbar.search.connect(dataArea.onSearch)
 
 
-DEBUG = True
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = MainWindow()

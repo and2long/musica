@@ -1,7 +1,7 @@
 import sys
 
-from PySide6 import QtMultimedia
-from PySide6.QtCore import QSize, Qt, QUrl, Slot
+from PySide6.QtCore import QSize, Qt, QUrl, Signal, Slot
+from PySide6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PySide6.QtWidgets import (
     QApplication,
     QHBoxLayout,
@@ -12,7 +12,6 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from constants import url_music_source
 from models import Song
 from tools import Log, MusicTool, TimeTool
 
@@ -21,6 +20,7 @@ stretchs = [1, 9, 5, 3]
 
 class ItemSong(QWidget):
     mHeight = 35
+    click_signal = Signal(Song)
 
     def __init__(self, parent=None, index=0, song: Song = None) -> None:
         super().__init__(parent=parent)
@@ -46,12 +46,7 @@ class ItemSong(QWidget):
             hLayout.addWidget(item, stretchs[i])
 
     def mouseDoubleClickEvent(self, event) -> None:
-        url = url_music_source.format(self.song.id)
-        Log.d("歌曲链接: {}".format(url))
-
-        player = QtMultimedia.QMediaPlayer()
-        player.setSource(QUrl(url))
-        player.play()
+        self.click_signal.emit(self.song)
 
 
 class DataHeader(QWidget):
@@ -100,6 +95,7 @@ class DataList(QWidget):
     def setData(self, value: list):
         for i in range(len(value)):
             itemWidget = ItemSong(self, index=i, song=value[i])
+            itemWidget.click_signal.connect(self.onSongClickSignal)
             item = QListWidgetItem()
             item.setSizeHint(QSize(0, ItemSong.mHeight))
             self.listWidget.addItem(item)
@@ -110,6 +106,10 @@ class DataList(QWidget):
         songCount, result = MusicTool.searchByKeyword(value)
         self.setData(result)
         self.header.setCount(songCount)
+
+    @Slot(Song)
+    def onSongClickSignal(self, value: Song):
+        Log.d("歌曲被点击: ".format(value))
 
 
 if __name__ == "__main__":

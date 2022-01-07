@@ -2,8 +2,7 @@ import json
 
 import requests
 
-from constants import url_search_by_keyword
-from main import DEBUG
+from constants import DEBUG, url_search_by_keyword
 from models import Song
 
 

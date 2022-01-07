@@ -12,7 +12,7 @@ from PySide6.QtWidgets import (
 )
 
 from models import Song
-from tools import MusicSourceTool, TimeTool
+from tools import MusicTool, TimeTool
 
 stretchs = [1, 9, 5, 3]
 
@@ -93,7 +93,7 @@ class DataList(QWidget):
 
     @Slot(str)
     def onSearch(self, value: str):
-        result = MusicSourceTool.searchByKeyword(value)
+        result = MusicTool.searchByKeyword(value)
         self.setData(result)
 
 

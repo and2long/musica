@@ -2,6 +2,7 @@ import json
 
 import requests
 
+from constants import url_search_by_keyword
 from models import Song
 
 
@@ -14,19 +15,26 @@ class QSSTool:
             obj.setStyleSheet(content)
 
 
-# 音乐资源工具类
-class MusicSourceTool:
+class MusicTool:
     @staticmethod
     def searchByKeyword(keyword) -> list:
         # 通过关键字查询
-        url = "http://music.163.com/api/search/get/web?csrf_token=hlpretag=&hlposttag=&s={}&type=1&offset=0&total=true&limit=10"
-        r = requests.get(url.format(keyword))
+        params = {
+            "offset": 0,
+            "limit": 10,
+            "s": keyword,
+            "total": True,
+            "type": 1,
+        }
+        r = requests.get(url_search_by_keyword, params)
         result = []
         if r.status_code == 200:
+            print(r.text)
             data = json.loads(r.text)
-            print("找到{}首歌曲".format(data["result"]["songCount"]))
-            for item in data["result"]["songs"]:
-                result.append(Song(data=item))
+            if data["code"] == 200:
+                songCount = data["result"]["songCount"]
+                for item in data["result"]["songs"]:
+                    result.append(Song(data=item))
         else:
             print("请求失败，status_code: {}".format(r.status_code))
         return result

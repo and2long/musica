@@ -3,8 +3,8 @@ import sys
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
 
-from data_list import DataList
-from topbar import TopBar
+from ui_data_list import DataList
+from ui_topbar import TopBar
 
 
 class MainWindow(QWidget):

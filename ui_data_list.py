@@ -50,12 +50,12 @@ class DataHeader(QWidget):
         super().__init__(parent=parent)
         self.setFixedSize(DataList.mWidth, self.mHeight)
 
-        count = QLabel("共找到{}首歌曲".format(300))
-        count.setStyleSheet("color: #666666; padding-left: 10px")
+        self.count = QLabel()
+        self.count.setStyleSheet("color: #666666; padding-left: 10px")
 
         vLayout = QVBoxLayout(self)
         vLayout.setContentsMargins(0, 0, 0, 0)
-        vLayout.addWidget(count)
+        vLayout.addWidget(self.count)
 
         hLayout = QHBoxLayout(self)
         hLayout.setContentsMargins(10, 0, 10, 0)
@@ -70,6 +70,9 @@ class DataHeader(QWidget):
 
         vLayout.addLayout(hLayout)
 
+    def setCount(self, value):
+        self.count.setText("共找到{}首歌曲".format(value))
+
 
 class DataList(QWidget):
     mWidth = 800
@@ -78,7 +81,7 @@ class DataList(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(self.mWidth, self.mHeight)
-        DataHeader(self)
+        self.header = DataHeader(self)
         self.listWidget = QListWidget(self)
         self.listWidget.move(0, DataHeader.mHeight)
         self.listWidget.setFixedSize(self.mWidth, self.mHeight - DataHeader.mHeight)
@@ -93,8 +96,9 @@ class DataList(QWidget):
 
     @Slot(str)
     def onSearch(self, value: str):
-        result = MusicTool.searchByKeyword(value)
+        songCount, result = MusicTool.searchByKeyword(value)
         self.setData(result)
+        self.header.setCount(songCount)
 
 
 if __name__ == "__main__":

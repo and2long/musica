@@ -17,7 +17,7 @@ class QSSTool:
 
 class MusicTool:
     @staticmethod
-    def searchByKeyword(keyword) -> list:
+    def searchByKeyword(keyword) -> tuple:
         # 通过关键字查询
         params = {
             "offset": 0,
@@ -27,6 +27,7 @@ class MusicTool:
             "type": 1,
         }
         r = requests.get(url_search_by_keyword, params)
+        songCount = 0
         result = []
         if r.status_code == 200:
             print(r.text)
@@ -37,7 +38,7 @@ class MusicTool:
                     result.append(Song(data=item))
         else:
             print("请求失败，status_code: {}".format(r.status_code))
-        return result
+        return (songCount, result)
 
 
 class TimeTool:

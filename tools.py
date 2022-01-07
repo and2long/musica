@@ -3,6 +3,7 @@ import json
 import requests
 
 from constants import url_search_by_keyword
+from main import DEBUG
 from models import Song
 
 
@@ -30,14 +31,14 @@ class MusicTool:
         songCount = 0
         result = []
         if r.status_code == 200:
-            print(r.text)
+            Log.d(r.text)
             data = json.loads(r.text)
             if data["code"] == 200:
                 songCount = data["result"]["songCount"]
                 for item in data["result"]["songs"]:
                     result.append(Song(data=item))
         else:
-            print("请求失败，status_code: {}".format(r.status_code))
+            Log.d("请求失败，status_code: {}".format(r.status_code))
         return (songCount, result)
 
 
@@ -48,3 +49,10 @@ class TimeTool:
         min = int(d / 60)
         sec = int(d % 60)
         return "{:0>2}:{:0>2}".format(min, sec)
+
+
+class Log:
+    @staticmethod
+    def d(obj):
+        if DEBUG:
+            print(obj)

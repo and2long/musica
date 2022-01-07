@@ -21,7 +21,7 @@ class TopBar(QWidget):
 
     def setup_ui(self):
         searchBar = QLineEdit(self)
-        searchBar.setPlaceholderText("关键字搜索")
+        searchBar.setPlaceholderText("搜索音乐")
         searchBar.setFixedSize(300, 28)
         searchBar.setStyleSheet(
             "background-color: #4a4a4a;  padding-left: 15px; padding-right: 15px; border-radius: 14px"
@@ -33,7 +33,9 @@ class TopBar(QWidget):
         recommend.move(50, 14)
 
         # 输入框监听回车键
-        searchBar.returnPressed.connect(lambda: self.search.emit(searchBar.text()))
+        searchBar.returnPressed.connect(
+            lambda: self.search.emit(searchBar.text() if searchBar.text() else "周杰伦")
+        )
 
 
 if __name__ == "__main__":

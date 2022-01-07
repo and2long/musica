@@ -1,6 +1,7 @@
 import sys
 
-from PySide6.QtCore import QSize, Qt, Slot
+from PySide6 import QtMultimedia
+from PySide6.QtCore import QSize, Qt, QUrl, Slot
 from PySide6.QtWidgets import (
     QApplication,
     QHBoxLayout,
@@ -11,8 +12,9 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from constants import url_music_source
 from models import Song
-from tools import MusicTool, TimeTool
+from tools import Log, MusicTool, TimeTool
 
 stretchs = [1, 9, 5, 3]
 
@@ -23,6 +25,7 @@ class ItemSong(QWidget):
     def __init__(self, parent=None, index=0, song: Song = None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(DataList.mWidth, self.mHeight)
+        self.song = song
 
         hLayout = QHBoxLayout(self)
         hLayout.setContentsMargins(10, 0, 10, 0)
@@ -41,6 +44,14 @@ class ItemSong(QWidget):
             item.setStyleSheet("color: #878787")
 
             hLayout.addWidget(item, stretchs[i])
+
+    def mouseDoubleClickEvent(self, event) -> None:
+        url = url_music_source.format(self.song.id)
+        Log.d("歌曲链接: {}".format(url))
+
+        player = QtMultimedia.QMediaPlayer()
+        player.setSource(QUrl(url))
+        player.play()
 
 
 class DataHeader(QWidget):

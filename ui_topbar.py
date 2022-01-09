@@ -3,19 +3,19 @@ import sys
 from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QWidget
 
+from constants import topBarHeight, topBarWidth
+
 
 class TopBar(QWidget):
-    mWidth = 800
-    mHeight = 50
 
     # 定义一个信号
     search = Signal(str)
 
     def __init__(self):
         super().__init__()
-        self.setFixedSize(self.mWidth, self.mHeight)
+        self.setFixedSize(topBarWidth, topBarHeight)
         bg = QLabel(self)
-        bg.setFixedSize(self.mWidth, self.mHeight)
+        bg.setFixedSize(topBarWidth, topBarHeight)
         bg.setStyleSheet("background-color :#2a2a2a")
         self.setup_ui()
 

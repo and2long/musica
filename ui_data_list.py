@@ -1,7 +1,6 @@
 import sys
 
-from PySide6.QtCore import QSize, Qt, QUrl, Signal, Slot
-from PySide6.QtMultimedia import QAudioOutput, QMediaPlayer
+from PySide6.QtCore import QSize, Qt, Signal, Slot
 from PySide6.QtWidgets import (
     QApplication,
     QHBoxLayout,
@@ -12,6 +11,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from constants import *
 from models import Song
 from tools import Log, MusicTool, TimeTool
 
@@ -19,12 +19,11 @@ stretchs = [1, 9, 5, 3]
 
 
 class ItemSong(QWidget):
-    mHeight = 35
     click_signal = Signal(Song)
 
     def __init__(self, parent=None, index=0, song: Song = None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(DataList.mWidth, self.mHeight)
+        self.setFixedSize(dataListWidth, itemSongHeight)
         self.song = song
 
         hLayout = QHBoxLayout(self)
@@ -50,11 +49,9 @@ class ItemSong(QWidget):
 
 
 class DataHeader(QWidget):
-    mHeight = 80
-
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(DataList.mWidth, self.mHeight)
+        self.setFixedSize(dataListWidth, dataListHeaderHeight)
 
         self.count = QLabel()
         self.count.setStyleSheet("color: #666666; padding-left: 10px")
@@ -81,16 +78,15 @@ class DataHeader(QWidget):
 
 
 class DataList(QWidget):
-    mWidth = 800
-    mHeight = 575
-
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(self.mWidth, self.mHeight)
+        self.setFixedSize(dataListWidth, dataListHeight)
         self.header = DataHeader(self)
         self.listWidget = QListWidget(self)
-        self.listWidget.move(0, DataHeader.mHeight)
-        self.listWidget.setFixedSize(self.mWidth, self.mHeight - DataHeader.mHeight)
+        self.listWidget.move(0, dataListHeaderHeight)
+        self.listWidget.setFixedSize(
+            dataListWidth, dataListHeight - dataListHeaderHeight
+        )
 
     def setData(self, value: list):
         for i in range(len(value)):

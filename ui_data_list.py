@@ -45,6 +45,7 @@ class ItemSong(QWidget):
             hLayout.addWidget(item, stretchs[i])
 
     def mouseDoubleClickEvent(self, event) -> None:
+        Log.d("歌曲链接: {}".format(url_music_source.format(self.song.id)))
         self.click_signal.emit(self.song)
 
 
@@ -93,7 +94,7 @@ class DataList(QWidget):
             itemWidget = ItemSong(self, index=i, song=value[i])
             itemWidget.click_signal.connect(self.onSongClickSignal)
             item = QListWidgetItem()
-            item.setSizeHint(QSize(0, ItemSong.mHeight))
+            item.setSizeHint(QSize(0, itemSongHeight))
             self.listWidget.addItem(item)
             self.listWidget.setItemWidget(item, itemWidget)
 
@@ -105,7 +106,7 @@ class DataList(QWidget):
 
     @Slot(Song)
     def onSongClickSignal(self, value: Song):
-        Log.d("歌曲被点击: ".format(value))
+        Log.d("收到歌曲被点击信号: ".format(value))
 
 
 if __name__ == "__main__":

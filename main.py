@@ -1,11 +1,11 @@
 import sys
 
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
+from PySide6.QtWidgets import QApplication, QWidget
 
 from constants import *
 from ui_bottom_bar import BottomBar
 from ui_data_list import DataList
+from ui_left_menus import LeftMenus
 from ui_topbar import TopBar
 
 
@@ -18,25 +18,7 @@ class MainWindow(QWidget):
         self.setup_ui()
 
     def setup_ui(self):
-        Leftmenus = QLabel(self)
-        Leftmenus.setFixedSize(leftMenuWidth, windowHeight - bottomBarHeight)
-        Leftmenus.setStyleSheet("background-color: #202020")
-
-        header = QLabel("MUSICA", self)
-        header.setFixedSize(leftMenuWidth, logoHeight)
-        header.setAlignment(Qt.AlignCenter)
-        header.setStyleSheet("font-size: 24px; background-color: #202020")
-
-        titles = ["发现音乐", "我的收藏", "下载管理"]
-        for i in range(3):
-            item = QLabel(titles[i], self)
-            item.setFixedSize(leftMenuWidth, leftMenuItemHeight)
-            item.setAlignment(Qt.AlignCenter)
-            item.move(0, logoHeight + i * leftMenuItemHeight)
-            if i == 0:
-                item.setStyleSheet("background-color: #1b1b1b; color: #c2473a;")
-            else:
-                item.setStyleSheet("background-color: #202020")
+        LeftMenus(self)
 
         # pb = QProgressBar(self)
         # pb.setValue(30)

@@ -18,37 +18,6 @@ from tools import Log, MusicTool, TimeTool
 stretchs = [1, 9, 5, 3]
 
 
-class ItemSong(QWidget):
-    click_signal = Signal(Song)
-
-    def __init__(self, parent=None, index=0, song: Song = None) -> None:
-        super().__init__(parent=parent)
-        self.setFixedSize(dataListWidth, itemSongHeight)
-        self.song = song
-
-        hLayout = QHBoxLayout(self)
-        hLayout.setContentsMargins(10, 0, 10, 0)
-        hLayout.setSpacing(0)
-
-        titles = [
-            "",
-            song.name,
-            "/".join([item["name"] for item in song.artists]),
-            TimeTool.durationFormat(song.duration),
-        ]
-        for i in range(len(titles)):
-            item = QLabel("{:0>2d}".format(index + 1) if i == 0 else titles[i])
-            if i == 0:
-                item.setAlignment(Qt.AlignCenter)
-            item.setStyleSheet("color: #878787")
-
-            hLayout.addWidget(item, stretchs[i])
-
-    def mouseDoubleClickEvent(self, event) -> None:
-        Log.d("歌曲链接: {}".format(url_music_source.format(self.song.id)))
-        self.click_signal.emit(self.song)
-
-
 class DataHeader(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
@@ -78,7 +47,46 @@ class DataHeader(QWidget):
         self.count.setText("共找到{}首歌曲".format(value))
 
 
+class ItemSong(QWidget):
+    # 双击信号
+    double_click_signal = Signal(Song)
+
+    def __init__(self, parent=None, index=0, song: Song = None) -> None:
+        super().__init__(parent=parent)
+        self.setFixedSize(dataListWidth, itemSongHeight)
+        self.song = song
+
+        hLayout = QHBoxLayout(self)
+        hLayout.setContentsMargins(10, 0, 10, 0)
+        hLayout.setSpacing(0)
+
+        titles = [
+            "",
+            song.name,
+            "/".join([item["name"] for item in song.artists]),
+            TimeTool.durationFormat(song.duration),
+        ]
+        for i in range(len(titles)):
+            item = QLabel("{:0>2d}".format(index + 1) if i == 0 else titles[i])
+            if i == 0:
+                item.setAlignment(Qt.AlignCenter)
+            item.setStyleSheet("color: #878787")
+
+            hLayout.addWidget(item, stretchs[i])
+
+    def mouseDoubleClickEvent(self, event) -> None:
+        Log.d(
+            "ItemSong.mouseDoubleClickEvent: {}".format(
+                url_music_source.format(self.song.id)
+            )
+        )
+        self.double_click_signal.emit(self.song)
+
+
 class DataList(QWidget):
+    # 条目被双击信号
+    item_doubel_click_signal = Signal(Song)
+
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(dataListWidth, dataListHeight)
@@ -92,7 +100,7 @@ class DataList(QWidget):
     def setData(self, value: list):
         for i in range(len(value)):
             itemWidget = ItemSong(self, index=i, song=value[i])
-            itemWidget.click_signal.connect(self.onSongClickSignal)
+            itemWidget.double_click_signal.connect(self.onSongDoubelClickEvent)
             item = QListWidgetItem()
             item.setSizeHint(QSize(0, itemSongHeight))
             self.listWidget.addItem(item)
@@ -104,9 +112,9 @@ class DataList(QWidget):
         self.setData(result)
         self.header.setCount(songCount)
 
-    @Slot(Song)
-    def onSongClickSignal(self, value: Song):
-        Log.d("收到歌曲被点击信号: ".format(value))
+    def onSongDoubelClickEvent(self, value: Song):
+        Log.d("DataList.onSongDoubelClickEvent: {}".format(value.name))
+        self.item_doubel_click_signal.emit(value)
 
 
 if __name__ == "__main__":

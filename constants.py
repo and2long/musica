@@ -16,12 +16,12 @@ topBarHeight = 50
 topBarWidth = 800
 
 # 底部栏
-bottomBarHeight = 45
+bottomBarHeight = 60
 
 # 歌曲列表
 dataListHeaderHeight = 80
 
-dataListHeight = 575
+dataListHeight = windowHeight - topBarHeight - bottomBarHeight
 dataListWidth = 800
 
 # 歌曲高度

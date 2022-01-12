@@ -11,8 +11,8 @@ class TopBar(QWidget):
     # 定义一个信号
     search = Signal(str)
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None) -> None:
+        super().__init__(parent=parent)
         self.setFixedSize(topBarWidth, topBarHeight)
         bg = QLabel(self)
         bg.setFixedSize(topBarWidth, topBarHeight)

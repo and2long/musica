@@ -4,6 +4,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
 
 from constants import *
+from ui_bottom_bar import BottomBar
 from ui_data_list import DataList
 from ui_topbar import TopBar
 
@@ -18,7 +19,7 @@ class MainWindow(QWidget):
 
     def setup_ui(self):
         Leftmenus = QLabel(self)
-        Leftmenus.setFixedSize(leftMenuWidth, windowHeight)
+        Leftmenus.setFixedSize(leftMenuWidth, windowHeight - bottomBarHeight)
         Leftmenus.setStyleSheet("background-color: #202020")
 
         header = QLabel("MUSICA", self)
@@ -37,20 +38,22 @@ class MainWindow(QWidget):
             else:
                 item.setStyleSheet("background-color: #202020")
 
-        pb = QProgressBar(self)
-        pb.setValue(30)
-        pb.setFixedWidth(windowWidth)
-        pb.setTextVisible(False)
-        pb.move(0, windowHeight - bottomBarHeight - 10)
+        # pb = QProgressBar(self)
+        # pb.setValue(30)
+        # pb.setFixedWidth(windowWidth)
+        # pb.setTextVisible(False)
+        # pb.move(0, windowHeight - bottomBarHeight - 10)
 
-        topbar = TopBar()
-        topbar.setParent(self)
+        topbar = TopBar(self)
         topbar.move(leftMenuWidth, 0)
 
         dataArea = DataList(self)
         dataArea.move(leftMenuWidth, topBarHeight)
-
+        # 连接搜索框与数据列表之间的信号
         topbar.search.connect(dataArea.onSearch)
+
+        bottomBar = BottomBar(self)
+        bottomBar.move(0, windowHeight - bottomBarHeight)
 
 
 if __name__ == "__main__":

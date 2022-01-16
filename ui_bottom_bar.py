@@ -6,7 +6,7 @@ from PySide6.QtWidgets import QApplication, QLabel, QWidget
 
 from constants import bottomBarHeight, windowWidth
 from models import Song
-from tools import Log
+from tools import Log, TimeTool
 
 
 # 底部控制栏
@@ -24,20 +24,18 @@ class BottomBar(QWidget):
         # 专辑图片
         album = QLabel(self)
         album.setFixedSize(42, 42)
-        album.setStyleSheet("background-color: white; border-radius: 5px")
+        album.setStyleSheet("background-color: grey; border-radius: 5px")
         album.move(8, 8)
 
         # 歌曲名
-        song_name = QLabel(self)
-        song_name.setText("被风吹过的夏天 - 林俊杰")
-        song_name.setStyleSheet("color: #ccc")
-        song_name.move(61, 10)
+        self.song_name = QLabel(self)
+        self.song_name.setStyleSheet("color: #ccc")
+        self.song_name.move(61, 10)
 
         # 进度和时长
-        song_duration = QLabel(self)
-        song_duration.setText("01:39 / 03:57")
-        song_duration.move(61, 32)
-        song_duration.setStyleSheet("color: grey")
+        self.song_duration = QLabel(self)
+        self.song_duration.move(61, 32)
+        self.song_duration.setStyleSheet("color: grey")
 
         # 初始化播放器
         filename = "reason.mp3"
@@ -49,6 +47,12 @@ class BottomBar(QWidget):
 
     def onSongDoubelClickEvent(self, value: Song):
         Log.d("播放歌曲: {}".format(value))
+        self.song_name.setText(
+            value.name + " - " + "/".join([item["name"] for item in value.artists])
+        )
+        self.song_name.adjustSize()
+        self.song_duration.setText("00:00 / " + TimeTool.durationFormat(value.duration))
+        self.song_duration.adjustSize()
         self.player.play()
 
 

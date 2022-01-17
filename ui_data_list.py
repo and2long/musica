@@ -92,6 +92,7 @@ class DataList(QWidget):
         self.setFixedSize(dataListWidth, dataListHeight)
         self.header = DataHeader(self)
         self.listWidget = QListWidget(self)
+        self.listWidget.verticalScrollBar().hide()
         self.listWidget.move(0, dataListHeaderHeight)
         self.listWidget.setFixedSize(
             dataListWidth, dataListHeight - dataListHeaderHeight

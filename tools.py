@@ -21,7 +21,7 @@ class MusicTool:
         # 通过关键字查询
         params = {
             "offset": 0,
-            "limit": 10,
+            "limit": 20,
             "s": keyword,
             "total": True,
             "type": 1,

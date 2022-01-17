@@ -58,5 +58,4 @@ class NetworkImage(QLabel):
         self.setPixmap(pixmap)
 
     def set_image_path(self, path):
-        Log.d(path)
         self.downloader.start_download(path)

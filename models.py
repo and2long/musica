@@ -22,8 +22,6 @@ class Song:
                 "id": self.id,
                 "name": self.name,
                 "duration": self.duration,
-                "artists": self.artists,
-                "album": self.album,
             },
             ensure_ascii=False,
         )

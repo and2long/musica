@@ -69,7 +69,6 @@ class BottomBar(QWidget):
         # self.player.setSource(QUrl.fromLocalFile(filename))
 
     def onSongDoubelClickEvent(self, value: Song):
-        Log.d("播放歌曲: {}".format(value))
         self.song = value
         self.song_name.setText(
             value.name + " - " + "/".join([item["name"] for item in value.artists])

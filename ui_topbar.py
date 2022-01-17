@@ -28,10 +28,6 @@ class TopBar(QWidget):
         )
         searchBar.move(150, 11)
 
-        recommend = QLabel("推荐", parent=self)
-        recommend.setStyleSheet("font-size: 14px")
-        recommend.move(50, 14)
-
         # 输入框监听回车键
         searchBar.returnPressed.connect(
             lambda: self.search.emit(searchBar.text() if searchBar.text() else "周杰伦")

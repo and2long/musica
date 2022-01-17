@@ -1,3 +1,4 @@
+import json
 import sys
 
 from PySide6.QtCore import QSize, Qt, Signal, Slot
@@ -54,8 +55,9 @@ class ItemSong(QWidget):
     def __init__(self, parent=None, index=0, song: Song = None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(dataListWidth, itemSongHeight)
-        self.song = song
+        self.setStyleSheet("background-color: #252525")
 
+        self.song = song
         hLayout = QHBoxLayout(self)
         hLayout.setContentsMargins(10, 0, 10, 0)
         hLayout.setSpacing(0)
@@ -70,8 +72,10 @@ class ItemSong(QWidget):
             item = QLabel("{:0>2d}".format(index + 1) if i == 0 else titles[i])
             if i == 0:
                 item.setAlignment(Qt.AlignCenter)
-            item.setStyleSheet("color: #878787")
-
+            if i == 1:
+                item.setStyleSheet("color: #AAAAAA")
+            else:
+                item.setStyleSheet("color: #878787")
             hLayout.addWidget(item, stretchs[i])
 
     def mouseDoubleClickEvent(self, event) -> None:
@@ -81,6 +85,12 @@ class ItemSong(QWidget):
             )
         )
         self.double_click_signal.emit(self.song)
+
+    def enterEvent(self, event) -> None:
+        self.setStyleSheet("background-color: #333333")
+
+    def leaveEvent(self, event) -> None:
+        self.setStyleSheet("background-color: #252525")
 
 
 class DataList(QWidget):
@@ -121,5 +131,12 @@ class DataList(QWidget):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = DataList()
+    result = []
+    with open("assets/search_result.json", "r") as f:
+        content = f.read()
+        data = json.loads(content)
+        for item in data["result"]["songs"]:
+            result.append(Song(data=item))
+    w.setData(result)
     w.show()
     sys.exit(app.exec())

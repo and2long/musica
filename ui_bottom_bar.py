@@ -69,6 +69,7 @@ class BottomBar(QWidget):
         # self.player.setSource(QUrl.fromLocalFile(filename))
 
     def onSongDoubelClickEvent(self, value: Song):
+        # 歌曲信息
         self.song = value
         self.song_name.setText(
             value.name + " - " + "/".join([item["name"] for item in value.artists])
@@ -77,8 +78,10 @@ class BottomBar(QWidget):
         self.song_duration.setText("00:00 / " + TimeTool.durationFormat(value.duration))
         self.song_duration.adjustSize()
 
-        # 切换歌曲
-        self.player.setSource(url_music_source.format(value.id))
+        # 切歌
+        url = url_music_source.format(value.id)
+        Log.d("{}: {}".format(value.name, url))
+        self.player.setSource(url)
         self.player.play()
         self.playing = True
         self.set_play_btn_image()

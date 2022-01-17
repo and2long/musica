@@ -38,12 +38,12 @@ class BottomBar(QWidget):
         self.song_duration.setStyleSheet("color: grey")
 
         # 初始化播放器
-        filename = "reason.mp3"
         self.player = QMediaPlayer()
         self.audio_output = QAudioOutput()
         self.player.setAudioOutput(self.audio_output)
-        self.player.setSource(QUrl.fromLocalFile(filename))
         self.audio_output.setVolume(100)
+        # filename = "reason.mp3"
+        # self.player.setSource(QUrl.fromLocalFile(filename))
 
     def onSongDoubelClickEvent(self, value: Song):
         Log.d("播放歌曲: {}".format(value))
@@ -53,7 +53,9 @@ class BottomBar(QWidget):
         self.song_name.adjustSize()
         self.song_duration.setText("00:00 / " + TimeTool.durationFormat(value.duration))
         self.song_duration.adjustSize()
-        self.player.play()
+
+        # self.player.setSource(QUrl.fr)
+        # self.player.play()
 
 
 if __name__ == "__main__":

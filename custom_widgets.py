@@ -1,12 +1,17 @@
-from PySide6.QtCore import Signal
-from PySide6.QtGui import QMouseEvent
+from functools import cached_property
+
+from PySide6.QtCore import QObject, Signal
+from PySide6.QtGui import QImage, QMouseEvent, QPixmap
+from PySide6.QtNetwork import QNetworkAccessManager, QNetworkReply, QNetworkRequest
 from PySide6.QtWidgets import QLabel
+
+from tools import Log
 
 
 class ClickedLabel(QLabel):
     clicked_signal = Signal()
 
-    def __init__(self, parent=None) -> None:
+    def __init__(self, parent) -> None:
         super().__init__(parent=parent)
 
     def connect_customized_slot(self, func):
@@ -14,3 +19,44 @@ class ClickedLabel(QLabel):
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
         self.clicked_signal.emit()
+
+
+class ImageDownloader(QObject):
+    finished = Signal(QImage)
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.manager.finished.connect(self.handle_finished)
+
+    @cached_property
+    def manager(self):
+        return QNetworkAccessManager()
+
+    def start_download(self, url):
+        self.manager.get(QNetworkRequest(url))
+
+    def handle_finished(self, reply):
+        if reply.error() != QNetworkReply.NoError:
+            print("error: ", reply.errorString())
+            return
+        image = QImage()
+        image.loadFromData(reply.readAll())
+        self.finished.emit(image)
+
+
+class NetworkImage(QLabel):
+    # https://stackoverflow.com/questions/68104165/display-image-from-url
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.setScaledContents(True)
+        self.downloader = ImageDownloader()
+        self.downloader.finished.connect(self.handle_finished)
+
+    def handle_finished(self, image):
+        pixmap = QPixmap.fromImage(image)
+        self.setPixmap(pixmap)
+
+    def set_image_path(self, path):
+        Log.d(path)
+        self.downloader.start_download(path)

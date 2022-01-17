@@ -5,7 +5,7 @@ from PySide6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PySide6.QtWidgets import QApplication, QLabel, QWidget
 
 from constants import bottomBarHeight, url_music_source, windowWidth
-from custom_widgets import ClickedLabel
+from custom_widgets import ClickedLabel, NetworkImage
 from models import Song
 from tools import Log, TimeTool
 
@@ -28,10 +28,10 @@ class BottomBar(QWidget):
         # pb.move(0, windowHeight - bottomBarHeight - 10)
 
         # 专辑图片
-        album = QLabel(self)
-        album.setFixedSize(42, 42)
-        album.setStyleSheet("background-color: grey; border-radius: 5px")
-        album.move(8, 8)
+        self.album = NetworkImage(self)
+        self.album.setFixedSize(42, 42)
+        self.album.setStyleSheet("background-color: grey; border-radius: 5px")
+        self.album.move(8, 8)
 
         # 歌曲名
         self.song_name = QLabel(self)
@@ -83,6 +83,9 @@ class BottomBar(QWidget):
         self.player.play()
         self.playing = True
         self.set_play_btn_image()
+
+        # 切换专辑图片
+        self.album.set_image_path(value.album["artist"]["img1v1Url"])
 
     def onPlayBtnClickedEvent(self):
         if self.song:

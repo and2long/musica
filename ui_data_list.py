@@ -75,6 +75,11 @@ class ItemSong(QWidget):
             hLayout.addWidget(item, stretchs[i])
 
     def mouseDoubleClickEvent(self, event) -> None:
+        Log.d(
+            "{}: {}\n{}".format(
+                self.song.name, self.song, url_music_source.format(self.song.id)
+            )
+        )
         self.double_click_signal.emit(self.song)
 
 

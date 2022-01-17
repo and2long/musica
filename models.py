@@ -2,19 +2,13 @@ import json
 
 
 class Song:
-    def __init__(
-        self, id: int = None, name: str = None, duration: int = None, data: dict = None
-    ):
-        if data:
-            self.id = data.get("id")
-            self.name = data.get("name")
-            self.duration = data.get("duration")
-            self.artists = data.get("artists")
-            self.album = data.get("album")
-        else:
-            self.id = id
-            self.name = name
-            self.duration = duration
+    def __init__(self, data: 3 = ...):
+        self.id = data.get("id")
+        self.name = data.get("name")
+        self.duration = data.get("duration")
+        self.artists = data.get("artists")
+        self.album = data.get("album")
+        self.copyrightId = data.get("copyrightId")
 
     def __str__(self) -> str:
         return json.dumps(
@@ -22,6 +16,7 @@ class Song:
                 "id": self.id,
                 "name": self.name,
                 "duration": self.duration,
+                "copyrightId": self.copyrightId,
             },
             ensure_ascii=False,
         )

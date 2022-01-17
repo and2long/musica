@@ -91,7 +91,6 @@ class BottomBar(QWidget):
 
         # 切歌
         url = url_music_source.format(value.id)
-        Log.d("{}: {}".format(value.name, url))
         self.player.setSource(url)
         self.player.play()
         self.playing = True

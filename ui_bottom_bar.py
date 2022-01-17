@@ -4,7 +4,7 @@ from PySide6.QtGui import QPixmap
 from PySide6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PySide6.QtWidgets import QApplication, QLabel, QWidget
 
-from constants import bottomBarHeight, windowWidth
+from constants import bottomBarHeight, url_music_source, windowWidth
 from custom_widgets import ClickedLabel
 from models import Song
 from tools import Log, TimeTool
@@ -18,6 +18,8 @@ class BottomBar(QWidget):
 
         # 是否正在播放
         self.playing = False
+        # 当前音乐资源
+        self.song = None
 
         # pb = QProgressBar(self)
         # pb.setValue(30)
@@ -58,6 +60,7 @@ class BottomBar(QWidget):
 
     def onSongDoubelClickEvent(self, value: Song):
         Log.d("播放歌曲: {}".format(value))
+        self.song = value
         self.song_name.setText(
             value.name + " - " + "/".join([item["name"] for item in value.artists])
         )
@@ -65,11 +68,25 @@ class BottomBar(QWidget):
         self.song_duration.setText("00:00 / " + TimeTool.durationFormat(value.duration))
         self.song_duration.adjustSize()
 
-        # self.player.setSource(QUrl.fr)
-        # self.player.play()
+        # 切换歌曲
+        self.player.setSource(url_music_source.format(value.id))
+        self.player.play()
+        self.playing = True
+        self.set_play_btn_image()
 
     def onPlayBtnClickedEvent(self):
-        self.playing = not self.playing
+        if self.song:
+            # 切换播放状态
+            if self.playing:
+                self.player.pause()
+            else:
+                self.player.play()
+            # 更改播放状态标记
+            self.playing = not self.playing
+            # 设置播放按钮图片
+            self.set_play_btn_image()
+
+    def set_play_btn_image(self):
         self.playBtn.setPixmap(
             QPixmap(
                 "assets/images/ic_pause.svg"

@@ -1,8 +1,9 @@
 import sys
 
+from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtMultimedia import QAudioOutput, QMediaPlayer
-from PySide6.QtWidgets import QApplication, QLabel, QWidget
+from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
 
 from constants import bottomBarHeight, url_music_source, windowWidth
 from custom_widgets import ClickedLabel, NetworkImage
@@ -21,11 +22,10 @@ class BottomBar(QWidget):
         # 当前音乐资源
         self.song = None
 
-        # pb = QProgressBar(self)
-        # pb.setValue(30)
-        # pb.setFixedWidth(windowWidth)
-        # pb.setTextVisible(False)
-        # pb.move(0, windowHeight - bottomBarHeight - 10)
+        self.pb = QProgressBar(self)
+        self.pb.setValue(0)
+        self.pb.setFixedSize(windowWidth, 2)
+        self.pb.setTextVisible(False)
 
         # 专辑图片
         self.album = NetworkImage(self)
@@ -67,6 +67,16 @@ class BottomBar(QWidget):
         self.audio_output.setVolume(100)
         # filename = "reason.mp3"
         # self.player.setSource(QUrl.fromLocalFile(filename))
+        self.player.positionChanged.connect(self.onPositionChanged)
+
+    def onPositionChanged(self, position):
+        self.pb.setValue(position)
+        self.song_duration.setText(
+            "{} / {}".format(
+                TimeTool.durationFormat(position),
+                TimeTool.durationFormat(self.song.duration),
+            )
+        )
 
     def onSongDoubelClickEvent(self, value: Song):
         # 歌曲信息
@@ -77,6 +87,7 @@ class BottomBar(QWidget):
         self.song_name.adjustSize()
         self.song_duration.setText("00:00 / " + TimeTool.durationFormat(value.duration))
         self.song_duration.adjustSize()
+        self.pb.setMaximum(value.duration)
 
         # 切歌
         url = url_music_source.format(value.id)

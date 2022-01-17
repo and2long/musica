@@ -44,11 +44,21 @@ class BottomBar(QWidget):
         self.song_duration.setStyleSheet("color: grey")
 
         # 播放按钮
-        self.playBtn = ClickedLabel(self)
-        self.playBtn.setPixmap(QPixmap("assets/images/ic_play.svg"))
-        self.playBtn.setFixedSize(40, 40)
-        self.playBtn.move(windowWidth / 2 - 20, bottomBarHeight / 2 - 20)
-        self.playBtn.clicked_signal.connect(self.onPlayBtnClickedEvent)
+        self.btn_play = ClickedLabel(self)
+        self.btn_play.setPixmap(QPixmap("assets/images/ic_play.svg"))
+        self.btn_play.setFixedSize(40, 40)
+        self.btn_play.move(windowWidth / 2 - 20, bottomBarHeight / 2 - 20)
+        self.btn_play.clicked_signal.connect(self.onPlayBtnClickedEvent)
+
+        self.btn_prev = ClickedLabel(self)
+        self.btn_prev.setPixmap(QPixmap("assets/images/ic_prev.svg"))
+        self.btn_prev.setFixedSize(12, 12)
+        self.btn_prev.move(windowWidth / 2 - 57, bottomBarHeight / 2 - 6)
+
+        self.btn_next = ClickedLabel(self)
+        self.btn_next.setPixmap(QPixmap("assets/images/ic_next.svg"))
+        self.btn_next.setFixedSize(12, 12)
+        self.btn_next.move(windowWidth / 2 + 45, bottomBarHeight / 2 - 6)
 
         # 初始化播放器
         self.player = QMediaPlayer()
@@ -87,7 +97,7 @@ class BottomBar(QWidget):
             self.set_play_btn_image()
 
     def set_play_btn_image(self):
-        self.playBtn.setPixmap(
+        self.btn_play.setPixmap(
             QPixmap(
                 "assets/images/ic_pause.svg"
                 if self.playing

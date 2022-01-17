@@ -1,0 +1,11 @@
+<svg id="ic_pause" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <circle id="椭圆_1" data-name="椭圆 1" cx="20" cy="20" r="20" fill="#c2473a"/>
+  <g id="矩形_6" data-name="矩形 6" transform="translate(15 13)" fill="#fff" stroke="#fff" stroke-width="1">
+    <rect width="3" height="14" stroke="none"/>
+    <rect x="0.5" y="0.5" width="2" height="13" fill="none"/>
+  </g>
+  <g id="矩形_7" data-name="矩形 7" transform="translate(22 13)" fill="#fff" stroke="#fff" stroke-width="1">
+    <rect width="3" height="14" stroke="none"/>
+    <rect x="0.5" y="0.5" width="2" height="13" fill="none"/>
+  </g>
+</svg>

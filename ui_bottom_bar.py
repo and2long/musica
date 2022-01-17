@@ -43,7 +43,7 @@ class BottomBar(QWidget):
 
         # 播放按钮
         self.playBtn = ClickedLabel(self)
-        self.playBtn.setPixmap(QPixmap("assets/images/ic_play.png"))
+        self.playBtn.setPixmap(QPixmap("assets/images/ic_play.svg"))
         self.playBtn.setFixedSize(40, 40)
         self.playBtn.move(windowWidth / 2 - 20, bottomBarHeight / 2 - 20)
         self.playBtn.clicked_signal.connect(self.onPlayBtnClickedEvent)
@@ -72,9 +72,9 @@ class BottomBar(QWidget):
         self.playing = not self.playing
         self.playBtn.setPixmap(
             QPixmap(
-                "assets/images/ic_pause.png"
+                "assets/images/ic_pause.svg"
                 if self.playing
-                else "assets/images/ic_play.png"
+                else "assets/images/ic_play.svg"
             )
         )
 

@@ -1,10 +1,11 @@
 import sys
 
-from PySide6.QtCore import QUrl
+from PySide6.QtGui import QPixmap
 from PySide6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PySide6.QtWidgets import QApplication, QLabel, QWidget
 
 from constants import bottomBarHeight, windowWidth
+from custom_widgets import ClickedLabel
 from models import Song
 from tools import Log, TimeTool
 
@@ -14,6 +15,9 @@ class BottomBar(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(windowWidth, bottomBarHeight)
+
+        # 是否正在播放
+        self.playing = False
 
         # pb = QProgressBar(self)
         # pb.setValue(30)
@@ -37,6 +41,13 @@ class BottomBar(QWidget):
         self.song_duration.move(61, 32)
         self.song_duration.setStyleSheet("color: grey")
 
+        # 播放按钮
+        self.playBtn = ClickedLabel(self)
+        self.playBtn.setPixmap(QPixmap("assets/images/ic_play.png"))
+        self.playBtn.setFixedSize(40, 40)
+        self.playBtn.move(windowWidth / 2 - 20, bottomBarHeight / 2 - 20)
+        self.playBtn.clicked_signal.connect(self.onPlayBtnClickedEvent)
+
         # 初始化播放器
         self.player = QMediaPlayer()
         self.audio_output = QAudioOutput()
@@ -56,6 +67,16 @@ class BottomBar(QWidget):
 
         # self.player.setSource(QUrl.fr)
         # self.player.play()
+
+    def onPlayBtnClickedEvent(self):
+        self.playing = not self.playing
+        self.playBtn.setPixmap(
+            QPixmap(
+                "assets/images/ic_pause.png"
+                if self.playing
+                else "assets/images/ic_play.png"
+            )
+        )
 
 
 if __name__ == "__main__":

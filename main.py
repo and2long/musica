@@ -3,6 +3,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QWidget
 
 from constants import *
+from tools import QSSTool
 from ui_bottom_bar import BottomBar
 from ui_container import Container
 from ui_download_page import DownloadPage
@@ -46,5 +47,6 @@ class MainWindow(QWidget):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = MainWindow()
+    QSSTool.setQssToObj("styles/main.qss", w)
     w.show()
     sys.exit(app.exec())

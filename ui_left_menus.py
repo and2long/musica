@@ -18,7 +18,7 @@ class LeftMenus(QWidget):
         header = QLabel("MUSICA", self)
         header.setFixedSize(left_menus_width, logo_height)
         header.setAlignment(Qt.AlignCenter)
-        header.setStyleSheet("font-size: 24px; background-color: #252525")
+        header.setStyleSheet("font-size: 24px; background-color: #252525; color: white")
 
         # 当前菜单索引
         self.cur_index = 0
@@ -41,7 +41,9 @@ class LeftMenus(QWidget):
                     "background-color: #1b1b1b; color: #c2473a;"
                 )
             else:
-                self.menus[i].setStyleSheet("background-color: #252525")
+                self.menus[i].setStyleSheet(
+                    "background-color: #252525; color: #aaaaaa;"
+                )
 
     def on_menu_checked(self, index):
         self.cur_index = index

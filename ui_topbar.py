@@ -21,6 +21,7 @@ class TopBar(QWidget):
 
     def setup_ui(self):
         searchBar = QLineEdit(self)
+        searchBar.setClearButtonEnabled(True)
         searchBar.setPlaceholderText("搜索音乐")
         searchBar.setFixedSize(300, 28)
         searchBar.setStyleSheet(

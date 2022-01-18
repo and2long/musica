@@ -3,7 +3,7 @@ import sys
 from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QApplication, QLabel, QLineEdit, QWidget
 
-from constants import topBarHeight, topBarWidth
+from constants import *
 
 
 class TopBar(QWidget):
@@ -13,9 +13,9 @@ class TopBar(QWidget):
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(topBarWidth, topBarHeight)
+        self.setFixedSize(top_bar_width, top_bar_height)
         bg = QLabel(self)
-        bg.setFixedSize(topBarWidth, topBarHeight)
+        bg.setFixedSize(top_bar_width, top_bar_height)
         bg.setStyleSheet("background-color :#2a2a2a")
         self.setup_ui()
 
@@ -27,7 +27,10 @@ class TopBar(QWidget):
         searchBar.setStyleSheet(
             "background-color: #4a4a4a;  padding-left: 15px; padding-right: 15px; border-radius: 14px"
         )
-        searchBar.move(150, 11)
+        searchBar.move(
+            (main_window_width - left_menus_width) / 2 - search_box_width / 2,
+            11,
+        )
 
         # 输入框监听回车键
         searchBar.returnPressed.connect(

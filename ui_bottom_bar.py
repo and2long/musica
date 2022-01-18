@@ -5,7 +5,7 @@ from PySide6.QtGui import QPixmap
 from PySide6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
 
-from constants import bottomBarHeight, url_music_source, windowWidth
+from constants import bottom_bar_height, url_music_source, main_window_width
 from custom_widgets import ClickedLabel, NetworkImage
 from models import Song
 from tools import Log, TimeTool
@@ -15,7 +15,7 @@ from tools import Log, TimeTool
 class BottomBar(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(windowWidth, bottomBarHeight)
+        self.setFixedSize(main_window_width, bottom_bar_height)
 
         # 是否正在播放
         self.playing = False
@@ -24,7 +24,7 @@ class BottomBar(QWidget):
 
         self.pb = QProgressBar(self)
         self.pb.setValue(0)
-        self.pb.setFixedSize(windowWidth, 2)
+        self.pb.setFixedSize(main_window_width, 2)
         self.pb.setTextVisible(False)
 
         # 专辑图片
@@ -47,18 +47,18 @@ class BottomBar(QWidget):
         self.btn_play = ClickedLabel(self)
         self.btn_play.setPixmap(QPixmap("assets/images/ic_play.svg"))
         self.btn_play.setFixedSize(40, 40)
-        self.btn_play.move(windowWidth / 2 - 20, bottomBarHeight / 2 - 20)
+        self.btn_play.move(main_window_width / 2 - 20, bottom_bar_height / 2 - 20)
         self.btn_play.clicked_signal.connect(self.onPlayBtnClickedEvent)
 
         self.btn_prev = ClickedLabel(self)
         self.btn_prev.setPixmap(QPixmap("assets/images/ic_prev.svg"))
         self.btn_prev.setFixedSize(12, 12)
-        self.btn_prev.move(windowWidth / 2 - 57, bottomBarHeight / 2 - 6)
+        self.btn_prev.move(main_window_width / 2 - 57, bottom_bar_height / 2 - 6)
 
         self.btn_next = ClickedLabel(self)
         self.btn_next.setPixmap(QPixmap("assets/images/ic_next.svg"))
         self.btn_next.setFixedSize(12, 12)
-        self.btn_next.move(windowWidth / 2 + 45, bottomBarHeight / 2 - 6)
+        self.btn_next.move(main_window_width / 2 + 45, bottom_bar_height / 2 - 6)
 
         # 初始化播放器
         self.player = QMediaPlayer()

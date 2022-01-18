@@ -2,27 +2,29 @@ DEBUG = True
 url_search_by_keyword = "http://music.163.com/api/search/get"
 url_music_source = "http://music.163.com/song/media/outer/url?id={}.mp3"
 
+left_menus_titles = ["发现音乐", "我的收藏", "下载管理"]
+
 # 窗口
-windowWidth = 1000
-windowHeight = 670
-logoHeight = 150
+main_window_width = 1000
+main_window_height = 670
+logo_height = 150
 
 #  左侧菜单
-leftMenuWidth = 200
-leftMenuItemHeight = 40
+left_menus_width = 200
+left_menus_height = 40
 
 # 顶部栏
-topBarHeight = 50
-topBarWidth = 800
+top_bar_height = 50
+top_bar_width = main_window_width - left_menus_width
+search_box_width = 300
 
 # 底部栏
-bottomBarHeight = 60
+bottom_bar_height = 60
 
 # 歌曲列表
-dataListHeaderHeight = 80
-
-dataListHeight = windowHeight - topBarHeight - bottomBarHeight
-dataListWidth = 800
+data_list_header_height = 80
+data_list_height = main_window_height - top_bar_height - bottom_bar_height
+data_list_width = main_window_width - left_menus_width
 
 # 歌曲高度
-itemSongHeight = 35
+item_song_height = 35

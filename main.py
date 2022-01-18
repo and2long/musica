@@ -6,14 +6,14 @@ from constants import *
 from ui_bottom_bar import BottomBar
 from ui_data_list import DataList
 from ui_left_menus import LeftMenus
-from ui_topbar import TopBar
+from ui_top_bar import TopBar
 
 
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("MUSICA")
-        self.setFixedSize(windowWidth, windowHeight)
+        self.setFixedSize(main_window_width, main_window_height)
         self.setStyleSheet("background-color: #252525")
         self.setup_ui()
 
@@ -21,13 +21,13 @@ class MainWindow(QWidget):
         LeftMenus(self)
 
         topbar = TopBar(self)
-        topbar.move(leftMenuWidth, 0)
+        topbar.move(left_menus_width, 0)
 
         dataArea = DataList(self)
-        dataArea.move(leftMenuWidth, topBarHeight)
+        dataArea.move(left_menus_width, top_bar_height)
 
         bottomBar = BottomBar(self)
-        bottomBar.move(0, windowHeight - bottomBarHeight)
+        bottomBar.move(0, main_window_height - bottom_bar_height)
 
         # 连接搜索框与数据列表
         topbar.search.connect(dataArea.onSearch)

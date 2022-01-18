@@ -10,20 +10,19 @@ class LeftMenus(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
         Leftmenus = QLabel(self)
-        Leftmenus.setFixedSize(leftMenuWidth, windowHeight - bottomBarHeight)
+        Leftmenus.setFixedSize(left_menus_width, main_window_height - bottom_bar_height)
         Leftmenus.setStyleSheet("background-color: #202020")
 
         header = QLabel("MUSICA", self)
-        header.setFixedSize(leftMenuWidth, logoHeight)
+        header.setFixedSize(left_menus_width, logo_height)
         header.setAlignment(Qt.AlignCenter)
         header.setStyleSheet("font-size: 24px; background-color: #202020")
 
-        titles = ["发现音乐", "我的收藏", "下载管理"]
         for i in range(3):
-            item = QLabel(titles[i], self)
-            item.setFixedSize(leftMenuWidth, leftMenuItemHeight)
+            item = QLabel(left_menus_titles[i], self)
+            item.setFixedSize(left_menus_width, left_menus_height)
             item.setAlignment(Qt.AlignCenter)
-            item.move(0, logoHeight + i * leftMenuItemHeight)
+            item.move(0, logo_height + i * left_menus_height)
             if i == 0:
                 item.setStyleSheet("background-color: #1b1b1b; color: #c2473a;")
             else:

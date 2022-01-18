@@ -22,7 +22,7 @@ stretchs = [1, 9, 5, 3]
 class DataHeader(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(dataListWidth, dataListHeaderHeight)
+        self.setFixedSize(data_list_width, data_list_header_height)
 
         self.count = QLabel()
         self.count.setStyleSheet("color: #666666; padding-left: 10px")
@@ -54,7 +54,7 @@ class ItemSong(QWidget):
 
     def __init__(self, parent=None, index=0, song: Song = None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(dataListWidth, itemSongHeight)
+        self.setFixedSize(data_list_width, item_song_height)
         self.setStyleSheet("background-color: #252525")
 
         self.song = song
@@ -99,13 +99,13 @@ class DataList(QWidget):
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(dataListWidth, dataListHeight)
+        self.setFixedSize(data_list_width, data_list_height)
         self.header = DataHeader(self)
         self.listWidget = QListWidget(self)
         self.listWidget.verticalScrollBar().hide()
-        self.listWidget.move(0, dataListHeaderHeight)
+        self.listWidget.move(0, data_list_header_height)
         self.listWidget.setFixedSize(
-            dataListWidth, dataListHeight - dataListHeaderHeight
+            data_list_width, data_list_height - data_list_header_height
         )
 
     def setData(self, value: list):
@@ -114,7 +114,7 @@ class DataList(QWidget):
             itemWidget = ItemSong(self, index=i, song=value[i])
             itemWidget.double_click_signal.connect(self.onSongDoubelClickEvent)
             item = QListWidgetItem()
-            item.setSizeHint(QSize(0, itemSongHeight))
+            item.setSizeHint(QSize(0, item_song_height))
             self.listWidget.addItem(item)
             self.listWidget.setItemWidget(item, itemWidget)
 

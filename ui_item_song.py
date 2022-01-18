@@ -12,7 +12,7 @@ class ItemSong(QWidget):
 
     def __init__(self, parent=None, index=0, song: Song = ...) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(data_list_width, item_song_height)
+        self.setFixedSize(container_width, item_song_height)
         self.setStyleSheet("background-color: #252525")
 
         self.song = song

@@ -2,8 +2,15 @@ import json
 import sys
 
 from PySide6.QtCore import QSize, Signal, Slot
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QListWidget,
-                               QListWidgetItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (
+    QApplication,
+    QHBoxLayout,
+    QLabel,
+    QListWidget,
+    QListWidgetItem,
+    QVBoxLayout,
+    QWidget,
+)
 
 from constants import *
 from models import Song
@@ -14,7 +21,7 @@ from ui_item_song import ItemSong
 class Header(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(data_list_width, data_list_header_height)
+        self.setFixedSize(container_width, container_header_height)
 
         self.count = QLabel()
         self.count.setStyleSheet("color: #666666; padding-left: 10px")
@@ -40,19 +47,19 @@ class Header(QWidget):
         self.count.setText("共找到{}首歌曲".format(value))
 
 
-class SearchResult(QWidget):
+class SearchPage(QWidget):
     # 条目被双击信号
     item_doubel_click_signal = Signal(Song)
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(data_list_width, data_list_height)
+        self.setFixedSize(container_width, container_height)
         self.header = Header(self)
         self.listWidget = QListWidget(self)
         self.listWidget.verticalScrollBar().hide()
-        self.listWidget.move(0, data_list_header_height)
+        self.listWidget.move(0, container_header_height)
         self.listWidget.setFixedSize(
-            data_list_width, data_list_height - data_list_header_height
+            container_width, container_height - container_header_height
         )
 
     def setData(self, value: list):
@@ -77,7 +84,7 @@ class SearchResult(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    w = SearchResult()
+    w = SearchPage()
     result = []
     with open("assets/search_result.json", "r") as f:
         content = f.read()

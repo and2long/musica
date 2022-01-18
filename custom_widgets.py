@@ -5,20 +5,23 @@ from PySide6.QtGui import QImage, QMouseEvent, QPixmap
 from PySide6.QtNetwork import QNetworkAccessManager, QNetworkReply, QNetworkRequest
 from PySide6.QtWidgets import QLabel
 
-from tools import Log
-
 
 class ClickedLabel(QLabel):
-    clicked_signal = Signal()
+
+    clicked_signal = Signal(int)
 
     def __init__(self, parent) -> None:
         super().__init__(parent=parent)
+        self.index = 0
+
+    def set_index(self, index):
+        self.index = index
 
     def connect_customized_slot(self, func):
         self.clicked_signal.connect(func)
 
     def mouseReleaseEvent(self, ev: QMouseEvent) -> None:
-        self.clicked_signal.emit()
+        self.clicked_signal.emit(self.index)
 
 
 class ImageDownloader(QObject):

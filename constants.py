@@ -28,3 +28,5 @@ data_list_width = main_window_width - left_menus_width
 
 # 歌曲高度
 item_song_height = 35
+
+item_song_stretchs = [1, 9, 5, 3]

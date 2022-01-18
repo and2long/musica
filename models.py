@@ -2,7 +2,7 @@ import json
 
 
 class Song:
-    def __init__(self, data: 3 = ...):
+    def __init__(self, data):
         self.id = data.get("id")
         self.name = data.get("name")
         self.duration = data.get("duration")

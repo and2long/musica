@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QApplication, QWidget
 
 from constants import *
 from ui_bottom_bar import BottomBar
-from ui_data_list import DataList
+from ui_search_result import SearchResult
 from ui_left_menus import LeftMenus
 from ui_top_bar import TopBar
 
@@ -23,7 +23,7 @@ class MainWindow(QWidget):
         topbar = TopBar(self)
         topbar.move(left_menus_width, 0)
 
-        dataArea = DataList(self)
+        dataArea = SearchResult(self)
         dataArea.move(left_menus_width, top_bar_height)
 
         bottomBar = BottomBar(self)

@@ -14,7 +14,7 @@ from PySide6.QtWidgets import (
 
 from constants import *
 from models import Song
-from tools import MusicTool
+from tools import MusicTool, QSSTool
 from ui_item_song import ItemSong
 
 
@@ -26,11 +26,11 @@ class Header(QWidget):
         self.count = QLabel()
         self.count.setStyleSheet("color: #666666; padding-left: 10px")
 
-        vLayout = QVBoxLayout(self)
+        vLayout = QVBoxLayout()
         vLayout.setContentsMargins(0, 0, 0, 0)
         vLayout.addWidget(self.count)
 
-        hLayout = QHBoxLayout(self)
+        hLayout = QHBoxLayout()
         hLayout.setContentsMargins(10, 0, 10, 0)
         hLayout.setSpacing(0)
 
@@ -42,6 +42,7 @@ class Header(QWidget):
             hLayout.addWidget(item, item_song_stretchs[i])
 
         vLayout.addLayout(hLayout)
+        self.setLayout(vLayout)
 
     def setCount(self, value):
         self.count.setText("共找到{}首歌曲".format(value))
@@ -54,6 +55,7 @@ class SearchPage(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(container_width, container_height)
+        QSSTool.set_qss_to_obj("styles/search_page.qss", self)
         self.header = Header(self)
         self.listWidget = QListWidget(self)
         self.listWidget.verticalScrollBar().hide()

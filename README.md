@@ -1,10 +1,8 @@
-# 音乐助手
+# MUSICA
 
 # 开发环境
-Python 3.9.7
+- Python 3.9.7
+- PySide6
 
-# 依赖包
-- pyside6
-- black
-- requests
-- ipykernel
+# :camera_flash: 预览
+<img src="arts/screenshot1.png" width="260">

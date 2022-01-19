@@ -1,4 +1,5 @@
 import os
+import platform
 import sys
 
 from PySide6.QtCore import QSize, Qt
@@ -55,6 +56,7 @@ class DownloadPage(QWidget):
         btn_open_dir.setText("打开目录")
         btn_play_all.move(10, 10)
         btn_open_dir.move(110, 15)
+        btn_open_dir.clicked_signal.connect(self.open_save_dir)
 
         list_widget = QListWidget(self)
         list_widget.move(0, 50)
@@ -66,6 +68,13 @@ class DownloadPage(QWidget):
             item.setSizeHint(QSize(0, item_song_height))
             list_widget.addItem(item)
             list_widget.setItemWidget(item, item_widget)
+
+    def open_save_dir(self):
+        sys_type = platform.system().lower()
+        if sys_type == "darwin":
+            os.system("open %s" % self.save_dir)
+        else:
+            Log.d("该平台尚未适配。")
 
 
 if __name__ == "__main__":

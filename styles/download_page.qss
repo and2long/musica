@@ -1,6 +1,9 @@
 QWidget {
     background-color: #252525;
 }
+QListWidget {
+    background-color: #252525;
+}
 
 QPushButton {
     background-color: #c2473a;

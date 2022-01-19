@@ -15,8 +15,9 @@ class LeftMenus(QWidget):
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
+        bg = QWidget(self)
+        bg.setFixedSize(left_menus_width, main_window_height - bottom_bar_height)
         QSSTool.set_qss_to_obj("styles/left_menus.qss", self)
-        self.setFixedSize(left_menus_width, main_window_height - bottom_bar_height)
 
         header = QLabel("MUSICA", self)
         header.resize(left_menus_width, logo_height)

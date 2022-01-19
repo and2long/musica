@@ -14,7 +14,8 @@ class TopBar(QWidget):
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(top_bar_width, top_bar_height)
+        bg = QWidget(self)
+        bg.setFixedSize(top_bar_width, top_bar_height)
         QSSTool.set_qss_to_obj("styles/top_bar.qss", self)
         self.setup_ui()
 
@@ -24,8 +25,7 @@ class TopBar(QWidget):
         search_box.setPlaceholderText("搜索音乐")
         search_box.setFixedSize(300, 28)
         search_box.move(
-            (main_window_width - left_menus_width) / 2 - search_box_width / 2,
-            11,
+            (main_window_width - left_menus_width) / 2 - search_box_width / 2, 11
         )
 
         # 输入框监听回车键

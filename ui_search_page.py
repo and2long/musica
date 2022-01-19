@@ -22,7 +22,6 @@ class Header(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
         self.setFixedSize(container_width, container_header_height)
-
         self.count = QLabel()
         self.count.setStyleSheet("color: #666666; padding-left: 10px")
 
@@ -54,8 +53,8 @@ class SearchPage(QWidget):
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setFixedSize(container_width, container_height)
         QSSTool.set_qss_to_obj("styles/search_page.qss", self)
+        self.setFixedSize(container_width, container_height)
         self.header = Header(self)
         self.listWidget = QListWidget(self)
         self.listWidget.verticalScrollBar().hide()

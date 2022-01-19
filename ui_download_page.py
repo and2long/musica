@@ -21,7 +21,7 @@ from ui_item_song import ItemSong
 class DownloadPage(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
-        self.setMinimumSize(container_width, container_height)
+        self.setFixedSize(container_width, container_height)
         QSSTool.set_qss_to_obj("styles/download_page.qss", self)
         self.init()
 

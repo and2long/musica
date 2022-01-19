@@ -9,7 +9,7 @@ from models import Song
 # QSS 工具类
 class QSSTool:
     @staticmethod
-    def setQssToObj(file_path, obj):
+    def set_qss_to_obj(file_path, obj):
         with open(file_path, "r") as f:
             content = f.read()
             obj.setStyleSheet(content)
@@ -17,7 +17,7 @@ class QSSTool:
 
 class MusicTool:
     @staticmethod
-    def searchByKeyword(keyword) -> tuple:
+    def search_by_keyword(keyword) -> tuple:
         # 通过关键字查询
         params = {
             "offset": 0,
@@ -43,7 +43,7 @@ class MusicTool:
 
 class TimeTool:
     @staticmethod
-    def durationFormat(d):
+    def duration_format(d):
         d = round(d / 1000)
         min = int(d / 60)
         sec = int(d % 60)

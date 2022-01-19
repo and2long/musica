@@ -42,7 +42,7 @@ class ItemSong(QWidget):
                 "",
                 song.name,
                 "/".join([item["name"] for item in song.artists]),
-                TimeTool.durationFormat(song.duration),
+                TimeTool.duration_format(song.duration),
             ]
             for i in range(len(titles)):
                 item = QLabel("{:0>2d}".format(index + 1) if i == 0 else titles[i])

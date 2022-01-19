@@ -73,8 +73,8 @@ class BottomBar(QWidget):
         self.pb.setValue(position)
         self.song_duration.setText(
             "{} / {}".format(
-                TimeTool.durationFormat(position),
-                TimeTool.durationFormat(self.song.duration),
+                TimeTool.duration_format(position),
+                TimeTool.duration_format(self.song.duration),
             )
         )
 
@@ -85,7 +85,9 @@ class BottomBar(QWidget):
             value.name + " - " + "/".join([item["name"] for item in value.artists])
         )
         self.song_name.adjustSize()
-        self.song_duration.setText("00:00 / " + TimeTool.durationFormat(value.duration))
+        self.song_duration.setText(
+            "00:00 / " + TimeTool.duration_format(value.duration)
+        )
         self.song_duration.adjustSize()
         self.pb.setMaximum(value.duration)
 

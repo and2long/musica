@@ -17,7 +17,6 @@ class MainWindow(QWidget):
         super().__init__()
         self.setWindowTitle("MUSICA")
         self.setFixedSize(main_window_width, main_window_height)
-        self.setStyleSheet("background-color: #252525")
         self.setup_ui()
 
     def setup_ui(self):
@@ -47,6 +46,6 @@ class MainWindow(QWidget):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = MainWindow()
-    QSSTool.setQssToObj("styles/main.qss", w)
+    QSSTool.set_qss_to_obj("styles/main.qss", w)
     w.show()
     sys.exit(app.exec())

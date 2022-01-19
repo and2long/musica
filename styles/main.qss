@@ -1,3 +1,3 @@
-* {
+QWidget {
     background-color: #252525;
 }

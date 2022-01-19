@@ -74,7 +74,7 @@ class SearchPage(QWidget):
 
     @Slot(str)
     def onSearch(self, value: str):
-        songCount, result = MusicTool.searchByKeyword(value)
+        songCount, result = MusicTool.search_by_keyword(value)
         self.setData(result)
         self.header.setCount(songCount)
 

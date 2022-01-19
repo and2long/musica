@@ -22,7 +22,7 @@ class DownloadPage(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
         self.setMinimumSize(container_width, container_height)
-        QSSTool.setQssToObj("styles/download_page.qss", self)
+        QSSTool.set_qss_to_obj("styles/download_page.qss", self)
         self.init()
 
     def init(self):

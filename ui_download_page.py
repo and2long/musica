@@ -60,7 +60,7 @@ class DownloadPage(QWidget):
 
         list_widget = QListWidget(self)
         list_widget.move(0, 50)
-        list_widget.setFixedSize(container_width, container_height)
+        list_widget.setFixedSize(container_width, container_height - 50)
 
         for i in range(len(self.mp3_files)):
             item_widget = ItemSong(self, index=i, local=True, name=self.mp3_files[i])

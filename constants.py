@@ -4,7 +4,6 @@ url_music_source = "http://music.163.com/song/media/outer/url?id={}.mp3"
 
 left_menus_titles = ["发现音乐", "下载管理"]
 
-download_dir = "Music/musica"
 
 # 窗口
 main_window_width = 1000

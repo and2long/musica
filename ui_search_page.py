@@ -2,15 +2,8 @@ import json
 import sys
 
 from PySide6.QtCore import QSize, Signal, Slot
-from PySide6.QtWidgets import (
-    QApplication,
-    QHBoxLayout,
-    QLabel,
-    QListWidget,
-    QListWidgetItem,
-    QVBoxLayout,
-    QWidget,
-)
+from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QListWidget,
+                               QListWidgetItem, QVBoxLayout, QWidget)
 
 from constants import *
 from models import Song

@@ -20,3 +20,6 @@ class Song:
             },
             ensure_ascii=False,
         )
+
+    def get_artists(self):
+        return "／".join([item["name"] for item in self.artists])

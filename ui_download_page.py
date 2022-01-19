@@ -14,7 +14,7 @@ from PySide6.QtWidgets import (
 
 from constants import *
 from custom_widgets import ClickedLabel
-from tools import Log, QSSTool
+from tools import Log, PathTool, QSSTool
 from ui_item_song import ItemSong
 
 
@@ -27,8 +27,7 @@ class DownloadPage(QWidget):
 
     def init(self):
         # 初始化下载目录
-        user_home = os.environ["HOME"]
-        self.save_dir = os.path.join(user_home, download_dir)
+        self.save_dir = PathTool.get_download_dir()
         if not os.path.exists(self.save_dir):
             os.mkdir(self.save_dir)
         files = os.listdir(self.save_dir)

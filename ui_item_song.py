@@ -1,9 +1,13 @@
+import os
+
+import requests
 from PySide6.QtCore import Qt, Signal
-from PySide6.QtWidgets import QHBoxLayout, QLabel, QWidget
+from PySide6.QtGui import QCursor
+from PySide6.QtWidgets import QHBoxLayout, QLabel, QMenu, QWidget
 
 from constants import *
 from models import Song
-from tools import Log, TimeTool
+from tools import Log, PathTool, TimeTool
 
 
 class ItemSong(QWidget):
@@ -23,6 +27,8 @@ class ItemSong(QWidget):
         self.setStyleSheet("background-color: #252525")
 
         self.song = song
+        self.local = local
+
         hLayout = QHBoxLayout(self)
         hLayout.setContentsMargins(0, 0, 0, 0)
         hLayout.setSpacing(0)
@@ -41,7 +47,7 @@ class ItemSong(QWidget):
             titles = [
                 "",
                 song.name,
-                "/".join([item["name"] for item in song.artists]),
+                song.get_artists(),
                 TimeTool.duration_format(song.duration),
             ]
             for i in range(len(titles)):
@@ -68,3 +74,18 @@ class ItemSong(QWidget):
 
     def leaveEvent(self, event) -> None:
         self.setStyleSheet("background-color: #252525")
+
+    def mouseReleaseEvent(self, event) -> None:
+        if not self.local and event.button() == Qt.RightButton:
+            menu = QMenu()
+            action = menu.addAction("下载: {}".format(self.song.name))
+            action.triggered.connect(self.download)
+            menu.exec(QCursor.pos())
+
+    def download(self):
+        resource_url = url_music_source.format(self.song.id)
+        response = requests.get(resource_url)
+        file_name = "{} - {}.mp3".format(self.song.name, self.song.get_artists())
+        file = os.path.join(PathTool.get_download_dir(), file_name)
+        with open(file, "wb") as f:
+            f.write(response.content)

@@ -1,4 +1,5 @@
 import json
+import os
 
 import requests
 
@@ -55,3 +56,11 @@ class Log:
     def d(obj):
         if DEBUG:
             print(obj)
+
+
+class PathTool:
+    @staticmethod
+    def get_download_dir():
+        user_home = os.environ["HOME"]
+        download_dir = os.path.join(user_home, "Music/musica")
+        return download_dir

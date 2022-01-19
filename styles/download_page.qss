@@ -1,0 +1,15 @@
+QWidget {
+    background-color: #252525;
+}
+
+QPushButton {
+    background-color: #c2473a;
+    color: white;
+    height: 30px;
+    border-radius: 15px;
+    padding: 0 15px;
+}
+
+ClickedLabel {
+    color: #5B7CAB
+}

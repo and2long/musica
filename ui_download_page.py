@@ -12,7 +12,8 @@ from PySide6.QtWidgets import (
 )
 
 from constants import *
-from tools import Log
+from custom_widgets import ClickedLabel
+from tools import Log, QSSTool
 from ui_item_song import ItemSong
 
 
@@ -20,6 +21,7 @@ class DownloadPage(QWidget):
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
         self.setMinimumSize(container_width, container_height)
+        QSSTool.setQssToObj("styles/download_page.qss", self)
         self.init()
 
     def init(self):
@@ -49,13 +51,14 @@ class DownloadPage(QWidget):
 
     def setup_ui(self):
         btn_play_all = QPushButton("播放全部", self)
-        btn_open_dir = QPushButton("打开目录", self)
+        btn_open_dir = ClickedLabel(self)
+        btn_open_dir.setText("打开目录")
         btn_play_all.move(10, 10)
-        btn_open_dir.move(100, 10)
+        btn_open_dir.move(110, 15)
 
         list_widget = QListWidget(self)
         list_widget.move(0, 50)
-        list_widget.setFixedWidth(container_width)
+        list_widget.setFixedSize(container_width, container_height)
 
         for i in range(len(self.mp3_files)):
             item_widget = ItemSong(self, index=i, local=True, name=self.mp3_files[i])

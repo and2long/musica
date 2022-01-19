@@ -13,7 +13,7 @@ logo_height = 150
 
 #  左侧菜单
 left_menus_width = 200
-left_menus_height = 40
+item_menu_height = 40
 
 # 顶部栏
 top_bar_height = 50

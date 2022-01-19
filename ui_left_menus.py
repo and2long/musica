@@ -5,6 +5,7 @@ from PySide6.QtWidgets import QApplication, QLabel, QWidget
 
 from constants import *
 from custom_widgets import ClickedLabel
+from tools import QSSTool
 
 
 class LeftMenus(QWidget):
@@ -14,11 +15,12 @@ class LeftMenus(QWidget):
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
+        QSSTool.set_qss_to_obj("styles/left_menus.qss", self)
+        self.setFixedSize(left_menus_width, main_window_height - bottom_bar_height)
 
         header = QLabel("MUSICA", self)
-        header.setFixedSize(left_menus_width, logo_height)
+        header.resize(left_menus_width, logo_height)
         header.setAlignment(Qt.AlignCenter)
-        header.setStyleSheet("font-size: 24px; background-color: #252525; color: white")
 
         # 当前菜单索引
         self.cur_index = 0
@@ -26,10 +28,10 @@ class LeftMenus(QWidget):
         for i in range(len(left_menus_titles)):
             item = ClickedLabel(self)
             item.set_index(i)
-            item.setFixedSize(left_menus_width, left_menus_height)
+            item.setFixedSize(left_menus_width, item_menu_height)
             item.setAlignment(Qt.AlignCenter)
             item.setText(left_menus_titles[i])
-            item.move(0, logo_height + i * left_menus_height)
+            item.move(0, logo_height + i * item_menu_height)
             item.connect_customized_slot(self.on_menu_checked)
             self.menus.append(item)
         self.set_style()
@@ -42,7 +44,7 @@ class LeftMenus(QWidget):
                 )
             else:
                 self.menus[i].setStyleSheet(
-                    "background-color: #252525; color: #aaaaaa;"
+                    "background-color: #202020; color: #aaaaaa;"
                 )
 
     def on_menu_checked(self, index):

@@ -24,7 +24,7 @@ class ItemSong(QWidget):
 
         self.song = song
         hLayout = QHBoxLayout(self)
-        hLayout.setContentsMargins(10, 0, 10, 0)
+        hLayout.setContentsMargins(0, 0, 0, 0)
         hLayout.setSpacing(0)
 
         if local:

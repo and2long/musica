@@ -23,8 +23,8 @@ class MainWindow(QWidget):
     def setup_ui(self):
         left_menus = LeftMenus(self)
 
-        topbar = TopBar(self)
-        topbar.move(left_menus_width, 0)
+        top_bar = TopBar(self)
+        top_bar.move(left_menus_width, 0)
 
         container = Container(self)
         container.move(left_menus_width, top_bar_height)
@@ -39,9 +39,9 @@ class MainWindow(QWidget):
         bottom_bar.move(0, main_window_height - bottom_bar_height)
 
         # 连接搜索框与数据列表
-        topbar.search.connect(search_page.onSearch)
+        top_bar.search.connect(search_page.on_search)
         # 连接数据列表和底部控制栏
-        search_page.item_doubel_click_signal.connect(bottom_bar.onSongDoubelClickEvent)
+        search_page.item_double_click_signal.connect(bottom_bar.on_song_double_clicked)
 
 
 if __name__ == "__main__":

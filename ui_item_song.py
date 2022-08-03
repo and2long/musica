@@ -29,9 +29,9 @@ class ItemSong(QWidget):
         self.song = song
         self.local = local
 
-        hLayout = QHBoxLayout(self)
-        hLayout.setContentsMargins(0, 0, 0, 0)
-        hLayout.setSpacing(0)
+        h_layout = QHBoxLayout(self)
+        h_layout.setContentsMargins(0, 0, 0, 0)
+        h_layout.setSpacing(0)
 
         if local:
             for i in range(2):
@@ -42,7 +42,7 @@ class ItemSong(QWidget):
                     item.setStyleSheet("color: #AAAAAA")
                 else:
                     item.setStyleSheet("color: #878787")
-                hLayout.addWidget(item, item_song_stretchs[i])
+                h_layout.addWidget(item, item_song_stretchs[i])
         else:
             titles = [
                 "",
@@ -58,7 +58,7 @@ class ItemSong(QWidget):
                     item.setStyleSheet("color: #AAAAAA")
                 else:
                     item.setStyleSheet("color: #878787")
-                hLayout.addWidget(item, item_song_stretchs[i])
+                h_layout.addWidget(item, item_song_stretchs[i])
 
     def mouseDoubleClickEvent(self, event) -> None:
         if self.song:

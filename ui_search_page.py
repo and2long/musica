@@ -18,31 +18,31 @@ class Header(QWidget):
         self.count = QLabel()
         self.count.setStyleSheet("color: #666666; padding-left: 10px")
 
-        vLayout = QVBoxLayout()
-        vLayout.setContentsMargins(0, 0, 0, 0)
-        vLayout.addWidget(self.count)
+        v_layout = QVBoxLayout()
+        v_layout.setContentsMargins(0, 0, 0, 0)
+        v_layout.addWidget(self.count)
 
-        hLayout = QHBoxLayout()
-        hLayout.setContentsMargins(10, 0, 10, 0)
-        hLayout.setSpacing(0)
+        h_layout = QHBoxLayout()
+        h_layout.setContentsMargins(10, 0, 10, 0)
+        h_layout.setSpacing(0)
 
         titles = ["", "音乐标题", "歌手", "时长"]
         for i in range(len(titles)):
             item = QLabel(titles[i])
             item.setStyleSheet("color: #878787")
 
-            hLayout.addWidget(item, item_song_stretchs[i])
+            h_layout.addWidget(item, item_song_stretchs[i])
 
-        vLayout.addLayout(hLayout)
-        self.setLayout(vLayout)
+        v_layout.addLayout(h_layout)
+        self.setLayout(v_layout)
 
-    def setCount(self, value):
+    def format_count(self, value):
         self.count.setText("共找到{}首歌曲".format(value))
 
 
 class SearchPage(QWidget):
     # 条目被双击信号
-    item_doubel_click_signal = Signal(Song)
+    item_double_click_signal = Signal(Song)
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent=parent)
@@ -56,24 +56,24 @@ class SearchPage(QWidget):
             container_width, container_height - container_header_height
         )
 
-    def setData(self, value: list):
+    def set_data(self, value: list):
         self.listWidget.clear()
         for i in range(len(value)):
-            itemWidget = ItemSong(self, index=i, song=value[i])
-            itemWidget.double_click_signal.connect(self.onSongDoubelClickEvent)
+            item_widget = ItemSong(self, index=i, song=value[i])
+            item_widget.double_click_signal.connect(self.on_item_double_click)
             item = QListWidgetItem()
             item.setSizeHint(QSize(0, item_song_height))
             self.listWidget.addItem(item)
-            self.listWidget.setItemWidget(item, itemWidget)
+            self.listWidget.setItemWidget(item, item_widget)
 
     @Slot(str)
-    def onSearch(self, value: str):
-        songCount, result = MusicTool.search_by_keyword(value)
-        self.setData(result)
-        self.header.setCount(songCount)
+    def on_search(self, value: str):
+        count, result = MusicTool.search_by_keyword(value)
+        self.set_data(result)
+        self.header.format_count(count)
 
-    def onSongDoubelClickEvent(self, value: Song):
-        self.item_doubel_click_signal.emit(value)
+    def on_item_double_click(self, value: Song):
+        self.item_double_click_signal.emit(value)
 
 
 if __name__ == "__main__":
@@ -85,6 +85,6 @@ if __name__ == "__main__":
         data = json.loads(content)
         for item in data["result"]["songs"]:
             result.append(Song(data=item))
-    w.setData(result)
+    w.set_data(result)
     w.show()
     sys.exit(app.exec())

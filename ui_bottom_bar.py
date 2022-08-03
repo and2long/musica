@@ -1,6 +1,5 @@
 import sys
 
-from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
@@ -8,7 +7,7 @@ from PySide6.QtWidgets import QApplication, QLabel, QProgressBar, QWidget
 from constants import bottom_bar_height, url_music_source, main_window_width
 from custom_widgets import ClickedLabel, NetworkImage
 from models import Song
-from tools import Log, TimeTool
+from tools import TimeTool
 
 
 # 底部控制栏
@@ -48,7 +47,7 @@ class BottomBar(QWidget):
         self.btn_play.setPixmap(QPixmap("assets/images/ic_play.svg"))
         self.btn_play.setFixedSize(40, 40)
         self.btn_play.move(main_window_width / 2 - 20, bottom_bar_height / 2 - 20)
-        self.btn_play.clicked_signal.connect(self.onPlayBtnClickedEvent)
+        self.btn_play.clicked_signal.connect(self.on_play_btn_clicked)
 
         self.btn_prev = ClickedLabel(self)
         self.btn_prev.setPixmap(QPixmap("assets/images/ic_prev.svg"))
@@ -67,9 +66,9 @@ class BottomBar(QWidget):
         self.audio_output.setVolume(100)
         # filename = "reason.mp3"
         # self.player.setSource(QUrl.fromLocalFile(filename))
-        self.player.positionChanged.connect(self.onPositionChanged)
+        self.player.positionChanged.connect(self.on_position_changed)
 
-    def onPositionChanged(self, position):
+    def on_position_changed(self, position):
         self.pb.setValue(position)
         self.song_duration.setText(
             "{} / {}".format(
@@ -78,7 +77,7 @@ class BottomBar(QWidget):
             )
         )
 
-    def onSongDoubelClickEvent(self, value: Song):
+    def on_song_double_clicked(self, value: Song):
         # 歌曲信息
         self.song = value
         self.song_name.setText(
@@ -101,7 +100,7 @@ class BottomBar(QWidget):
         # 切换专辑图片
         self.album.set_image_path(value.album["artist"]["img1v1Url"])
 
-    def onPlayBtnClickedEvent(self):
+    def on_play_btn_clicked(self):
         if self.song:
             # 切换播放状态
             if self.playing:

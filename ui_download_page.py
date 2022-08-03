@@ -23,16 +23,16 @@ class DownloadPage(QWidget):
         super().__init__(parent=parent)
         self.setFixedSize(container_width, container_height)
         QSSTool.set_qss_to_obj("styles/download_page.qss", self)
+        self.save_dir = PathTool.get_download_dir()
+        self.mp3_files = []
         self.init()
 
     def init(self):
         # 初始化下载目录
-        self.save_dir = PathTool.get_download_dir()
         if not os.path.exists(self.save_dir):
             os.mkdir(self.save_dir)
         files = os.listdir(self.save_dir)
         # 筛选出 mp3 文件
-        self.mp3_files = []
         if len(files) > 0:
             for file in files:
                 if file.endswith("mp3"):
